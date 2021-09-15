@@ -1,9 +1,12 @@
 package estacaometereologica;
 
+import apresentacao.frmPrincipal;
+
 public class EstacaoMetereologica
 {
     public static void main(String[] args)
     {
-        System.out.println("hello world");
+        frmPrincipal frmP = new frmPrincipal(null, true);
+        frmP.setVisible(true);
     }
 }
