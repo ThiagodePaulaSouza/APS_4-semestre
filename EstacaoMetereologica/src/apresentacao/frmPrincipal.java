@@ -31,55 +31,43 @@ public class frmPrincipal extends javax.swing.JDialog
     private void initComponents()
     {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuEstacaoMeteorologica = new javax.swing.JMenu();
+        mnuMedirTemperatura = new javax.swing.JMenuItem();
+        mnuMedirUmidade = new javax.swing.JMenuItem();
+        mnuMedirPrecipitacao = new javax.swing.JMenuItem();
+        mnuPEED = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("branch teste");
 
-        jLabel1.setText("label");
+        mnuEstacaoMeteorologica.setText("Estação Meteorologica");
 
-        jLabel2.setText("jLabel2");
+        mnuMedirTemperatura.setText("MedirTemperatura");
+        mnuEstacaoMeteorologica.add(mnuMedirTemperatura);
 
-        jLabel3.setText("jLabel3");
+        mnuMedirUmidade.setText("MedirUmidade");
+        mnuEstacaoMeteorologica.add(mnuMedirUmidade);
 
-        jLabel4.setText("jLabel4");
+        mnuMedirPrecipitacao.setText("MedirPrecipitacao");
+        mnuEstacaoMeteorologica.add(mnuMedirPrecipitacao);
+
+        mnuPEED.setText("Pesquisar,Editar e Excluir Dados");
+        mnuEstacaoMeteorologica.add(mnuPEED);
+
+        jMenuBar1.add(mnuEstacaoMeteorologica);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(78, 78, 78)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(87, 87, 87)
-                            .addComponent(jLabel3)
-                            .addGap(41, 41, 41)
-                            .addComponent(jLabel2))))
-                .addContainerGap(190, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel3)))
-                .addGap(42, 42, 42)
-                .addComponent(jLabel4)
-                .addContainerGap(109, Short.MAX_VALUE))
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         pack();
@@ -145,9 +133,11 @@ public class frmPrincipal extends javax.swing.JDialog
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu mnuEstacaoMeteorologica;
+    private javax.swing.JMenuItem mnuMedirPrecipitacao;
+    private javax.swing.JMenuItem mnuMedirTemperatura;
+    private javax.swing.JMenuItem mnuMedirUmidade;
+    private javax.swing.JMenuItem mnuPEED;
     // End of variables declaration//GEN-END:variables
 }
