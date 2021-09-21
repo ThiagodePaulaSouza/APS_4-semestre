@@ -38,7 +38,7 @@ git checkout -b (suaBranch)							# adiciona e muda sua branch atual
 
 
 
-##### 3. DEPOIS DE FAZER ALTERAÇÕES:
+##### 2. DEPOIS DE FAZER ALTERAÇÕES:
 
 Entre dentro da pasta onde está o projeto > clique com o botão direito > git bash
 
@@ -54,7 +54,7 @@ git push -u origin (suaBranch)						# envia para o repositório remoto
 
 
 
-##### 4. CASO PEÇA O LOGIN DO SSH:
+##### 3. CASO PEÇA O LOGIN DO SSH:
 
 (1.1)Coloque seu user name > (1.2) clique em ok > entre em https://github.com/settings/tokens > (2.1)crie um token > de permissões a ele > finalize > (2.2) copie o token > (3.1) cole no campo de texto > (3.2) clique em ok.
 
@@ -62,7 +62,7 @@ git push -u origin (suaBranch)						# envia para o repositório remoto
 
 
 
-##### 5. DEPOIS DO GIT VEM O GITHUB:
+##### 4. DEPOIS DO GIT VEM O GITHUB:
 
 (1) clique em Compare & pull request > (2.1) adicione comentários necessários > (2.2) clique em Create pull request > comente a mudança como quiser.
 
