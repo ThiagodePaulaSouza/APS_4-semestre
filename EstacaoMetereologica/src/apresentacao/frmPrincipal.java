@@ -31,6 +31,7 @@ public class frmPrincipal extends javax.swing.JDialog
     private void initComponents()
     {
 
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuEstacaoMeteorologica = new javax.swing.JMenu();
         mnuMedirTemperatura = new javax.swing.JMenuItem();
@@ -40,6 +41,8 @@ public class frmPrincipal extends javax.swing.JDialog
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("branch teste");
+
+        jLabel1.setText("Label legal");
 
         mnuEstacaoMeteorologica.setText("Estação Meteorologica");
 
@@ -63,11 +66,17 @@ public class frmPrincipal extends javax.swing.JDialog
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addComponent(jLabel1)
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(255, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,6 +142,7 @@ public class frmPrincipal extends javax.swing.JDialog
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu mnuEstacaoMeteorologica;
     private javax.swing.JMenuItem mnuMedirPrecipitacao;

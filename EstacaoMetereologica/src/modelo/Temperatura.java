@@ -46,6 +46,4 @@ public class Temperatura
     {
         this.Fahreint = fahreint;
     }
-    
-    
 }
