@@ -32,27 +32,51 @@ public class frmPrincipal extends javax.swing.JDialog
     {
 
         jLabel1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuEstacaoMeteorologica = new javax.swing.JMenu();
+        mnuMedirTemperatura = new javax.swing.JMenuItem();
+        mnuMedirUmidade = new javax.swing.JMenuItem();
+        mnuMedirPrecipitacao = new javax.swing.JMenuItem();
+        mnuPEED = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("branch teste");
 
-        jLabel1.setText("label");
+        jLabel1.setText("Label legal");
+
+        mnuEstacaoMeteorologica.setText("Estação Meteorologica");
+
+        mnuMedirTemperatura.setText("MedirTemperatura");
+        mnuEstacaoMeteorologica.add(mnuMedirTemperatura);
+
+        mnuMedirUmidade.setText("MedirUmidade");
+        mnuEstacaoMeteorologica.add(mnuMedirUmidade);
+
+        mnuMedirPrecipitacao.setText("MedirPrecipitacao");
+        mnuEstacaoMeteorologica.add(mnuMedirPrecipitacao);
+
+        mnuPEED.setText("Pesquisar,Editar e Excluir Dados");
+        mnuEstacaoMeteorologica.add(mnuPEED);
+
+        jMenuBar1.add(mnuEstacaoMeteorologica);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(158, 158, 158)
                 .addComponent(jLabel1)
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
 
         pack();
@@ -119,5 +143,11 @@ public class frmPrincipal extends javax.swing.JDialog
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu mnuEstacaoMeteorologica;
+    private javax.swing.JMenuItem mnuMedirPrecipitacao;
+    private javax.swing.JMenuItem mnuMedirTemperatura;
+    private javax.swing.JMenuItem mnuMedirUmidade;
+    private javax.swing.JMenuItem mnuPEED;
     // End of variables declaration//GEN-END:variables
 }
