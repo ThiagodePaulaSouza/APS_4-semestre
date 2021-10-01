@@ -1,12 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <ui:insert name="titulo">
+            <title>Thigas Teste</title>
+        </ui:insert>
+        <link rel="StyleSheet" type="text/css" href="resource/css/style.css" media="screen"></link>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h1>Hello from Facelets</h1> 
+        
+        <f:view>
+            <h:form>
+                <fieldset>
+                    <legend>Dados</legend>
+                    <h:outputText value="Nome:" styleClass="rotulos"/><br></br>
+                    <h:inputText id="edtNome" value="" styleClass="edit" size="60" /><br></br>
+                    <h:outputText value="RG:" styleClass="rotulos"/><br></br>
+                    <h:inputText id="edtRG" value="" styleClass="edit" size="20" /><br></br>
+                    <h:outputText value="CPF:" styleClass="rotulos"/><br></br>
+                    <h:inputText id="edtCPF" value="" styleClass="edit" size="30" /><br></br>
+                    <h:outputText value="E-mail:" styleClass="rotulos"/><br></br>
+                    <h:inputText id="edtEmail" value="" styleClass="edit" size="50" /><br></br>
+                    <h:commandButton value="Gravar" type="submit" styleClass="botoes"/>
+                    <h:commandButton value="Limpar" type="reset" styleClass="botoes"/>
+                    
+                </fieldset>
+            </h:form>
+        </f:view>
     </h:body>
+    <script src="./resource/index.js"></script>
 </html>
 
