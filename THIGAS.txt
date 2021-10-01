@@ -1,1 +1,12 @@
-THIGAS
+criado bd no phpmyadmin:
+
+create database estacaoteste1;
+
+create table 
+(
+id int(11) primary key,
+temperatura int(20),
+sensor_chuva int(20),
+precipitacao int(20)
+)
+
