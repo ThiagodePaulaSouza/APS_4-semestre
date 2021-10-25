@@ -11,12 +11,10 @@ import java.util.Set;
 import javax.el.LambdaExpression;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-//import javax.faces.bean.ViewScoped;
 import javax.faces.view.ViewScoped;
 
 @ManagedBean
 @ViewScoped
-//@ViewScoped
 public class EstudanteRegistrarBean implements Serializable
 {
 
@@ -33,7 +31,6 @@ public class EstudanteRegistrarBean implements Serializable
     public void exibirNotas()
     {
         this.mostrarNotas = true;
-
     }
 
     public void esconderNotas()
@@ -72,11 +69,6 @@ public class EstudanteRegistrarBean implements Serializable
         this.nomesMap = nomesMap;
     }
 
-    //{
-    //    nomesMap.put("Goku", "foite");
-    //     nomesMap.put("Luffy", "estica");
-    //    nomesMap.put("Naruto", "usa crack");
-    //}
     public List<String> getNomesList()
     {
         return nomesList;
