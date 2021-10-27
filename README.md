@@ -5,7 +5,7 @@
 
 Faça Fork do projeto e copie o url:
 
-Entre no netbeans > clique em equipe > Git > Clonar... > Insira a url do seu repositório, a senha do seu repositório, pasta para onde vai ser clonado >  próximo > marque a ramificação > próximo > escolha o diretório > finalizar.
+Entre no netbeans > clique em equipe > Git > Clonar... > Insira a url do seu repositório(fork), coloque seu usuario e a senha do seu repositório e pasta para onde vai ser clonado >  próximo > marque a ramificação main > próximo > escolha o diretório > finalizar.
 
 
 ## 🥳 Como Ajudar:
