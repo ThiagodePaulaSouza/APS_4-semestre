@@ -11,14 +11,16 @@ import org.hibernate.Session;
 
 public class PrecipitacaoDAO
 {
+
     private String mensagem;
-    public PrecipitacaoDAO()
+
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    Query q = session.createSQLQuery("SELECT SCOPE_IDENTITY()");
+    private int valorPrecipitacao  = (int) q.list().get(0);
+
+    public void PrecipitacaoDAO()
     {
-        PrecipitacaoBean precipitacao = new PrecipitacaoBean();
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Query q = session.createSQLQuery("SELECT SCOPE_IDENTITY()");
-        precipitacao.setValorPrecipitacao((int) q.list().get(0));
-        System.out.println("opa bão precipitacaoDAO da uma OLHADA");
+    
     }
 
     public String getMensagem()
@@ -33,4 +35,9 @@ public class PrecipitacaoDAO
 
     //.uniqueResult()).longValue();
     //Long lastId = ((BigInteger) session.createSQLQuery("SELECT LAST_INSERT_ID()").uniqueResult()).longValue();
+
+    public int getValorPrecipitacao()
+    {
+        return valorPrecipitacao;
+    }
 }

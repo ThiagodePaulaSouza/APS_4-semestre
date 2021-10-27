@@ -14,23 +14,22 @@ public class TemperaturaDAO
 {
 
     private String mensagem;
-    Session session = HibernateUtil.getSessionFactory().openSession();       
-
-    public TemperaturaBean pesquisarTemperaturaPorId(TemperaturaBean valorTemperatura)
+    private Session session = HibernateUtil.getSessionFactory().openSession();
+    private Integer temperatura;
+    public Integer pesquisarTemperatura()
     {
         try
         {
-            Query q = session.createQuery("from Temperatura t where t.cod_temperataura = :cod_temperatura");
-            q.setParameter("id" , valorTemperatura.getCodTemperatura());
-            valorTemperatura = (TemperaturaBean) q.list().get(0);
+            TemperaturaBean t =  (TemperaturaBean) session.createQuery("from Temperatura ORDER BY cod_temperataura DESC").setMaxResults(1).uniqueResult();
+            temperatura = t.getValorTemperatura();
             System.out.println("Deu certo !");
         }
         catch (Exception e)
         {
-            this.mensagem = "erro de leitura no BD";                            
-            System.out.println(e);                      
+            this.mensagem = "erro de leitura no BD";
+            System.out.println(e);
         }
-        return valorTemperatura;
+        return temperatura;
     }
 
     public String getMensagem()
@@ -42,6 +41,5 @@ public class TemperaturaDAO
     {
         this.mensagem = mensagem;
     }
-    
 
 }
