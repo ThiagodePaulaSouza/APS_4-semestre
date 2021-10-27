@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome:" for="nome"/>
+                <h:inputText value="#{estadoMB.estado.nome}" maxlength="45" id="nome"
+                             required="true" requiredMessage="Campo Nome é obrigatório."/>
+                <h:outputLabel value="Sigla:" for="sigla" />
+                <h:inputText value="#{estadoMB.estado.sigla}" maxlength="5" id="sigla" required="true" requiredMessage="Campo Sigla é obrigatório."/>
+                <h:commandButton action="#{estadoMB.estado.salvar()}" value="Salvar"/>
+            </h:panelGrid>
+            <h:messages/>
+        </h:form>
+        
+        <h:form>
+            <h:dataTable var="item" value="#{estadoMB.salvar()}">
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                    #{item.nome}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Sigla</f:facet>
+                    #{item.sigla}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
