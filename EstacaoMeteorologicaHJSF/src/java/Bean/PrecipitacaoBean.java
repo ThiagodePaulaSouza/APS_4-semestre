@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo.entidade;
+package Bean;
 
 import DAL.PrecipitacaoDAO;
 import javax.faces.bean.ManagedBean;
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Precipitacao.findByCodPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.codPrecipitacao = :codPrecipitacao")
     , @NamedQuery(name = "Precipitacao.findByValorPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.valorPrecipitacao = :valorPrecipitacao")
 })
-public class Precipitacao implements Serializable
+public class PrecipitacaoBean implements Serializable
 {
     private static final long serialVersionUID = 1L;
     @Id
@@ -45,19 +45,20 @@ public class Precipitacao implements Serializable
     private Integer codPrecipitacao;
     @Basic(optional = false)
     @Column(name = "valor_precipitacao")
-    private int valorPrecipitacao;
+    private int valorPrecipitacao;//precisa receber algo
     
     
-    public Precipitacao()
+    
+    public PrecipitacaoBean()
     {
     }
 
-    public Precipitacao(Integer codPrecipitacao)
+    public PrecipitacaoBean(Integer codPrecipitacao)
     {
         this.codPrecipitacao = codPrecipitacao;
     }
 
-    public Precipitacao(Integer codPrecipitacao, int valorPrecipitacao)
+    public PrecipitacaoBean(Integer codPrecipitacao, int valorPrecipitacao)
     {
         this.codPrecipitacao = codPrecipitacao;
         this.valorPrecipitacao = valorPrecipitacao;
@@ -95,11 +96,11 @@ public class Precipitacao implements Serializable
     public boolean equals(Object object)
     {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Precipitacao))
+        if (!(object instanceof PrecipitacaoBean))
         {
             return false;
         }
-        Precipitacao other = (Precipitacao) object;
+        PrecipitacaoBean other = (PrecipitacaoBean) object;
         if ((this.codPrecipitacao == null && other.codPrecipitacao != null) || (this.codPrecipitacao != null && !this.codPrecipitacao.equals(other.codPrecipitacao)))
         {
             return false;
@@ -111,16 +112,6 @@ public class Precipitacao implements Serializable
     public String toString()
     {
         return "br.com.estacao.entidade.Precipitacao[ codPrecipitacao=" + codPrecipitacao + " ]";
-    }
-
-    public PrecipitacaoDAO getPd()
-    {
-        return pd;
-    }
-
-    public void setPd(PrecipitacaoDAO pd)
-    {
-        this.pd = pd;
     }
     
 }

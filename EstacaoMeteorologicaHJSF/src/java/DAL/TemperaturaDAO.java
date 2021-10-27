@@ -5,7 +5,7 @@
  */
 package DAL;
 
-import Modelo.entidade.Temperatura;
+import Bean.TemperaturaBean;
 import DAL.Util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -16,13 +16,13 @@ public class TemperaturaDAO
     private String mensagem;
     Session session = HibernateUtil.getSessionFactory().openSession();       
 
-    public Temperatura pesquisarTemperaturaPorId(Temperatura valorTemperatura)
+    public TemperaturaBean pesquisarTemperaturaPorId(TemperaturaBean valorTemperatura)
     {
         try
         {
             Query q = session.createQuery("from Temperatura t where t.cod_temperataura = :cod_temperatura");
             q.setParameter("id" , valorTemperatura.getCodTemperatura());
-            valorTemperatura = (Temperatura) q.list().get(0);
+            valorTemperatura = (TemperaturaBean) q.list().get(0);
             System.out.println("Deu certo !");
         }
         catch (Exception e)

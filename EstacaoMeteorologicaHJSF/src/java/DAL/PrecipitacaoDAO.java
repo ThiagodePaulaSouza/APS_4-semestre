@@ -4,34 +4,23 @@ package DAL;
  *
  * @author Usuario
  */
-import Modelo.entidade.Precipitacao;
+import Bean.PrecipitacaoBean;
 import DAL.Util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class PrecipitacaoDAO
 {
-
     private String mensagem;
-    Session session  = HibernateUtil.getSessionFactory().openSession();
-    
-    public Precipitacao pesquisarPrecipitacaoPorId(Precipitacao valorPrecipitacao)
+    public PrecipitacaoDAO()
     {
-        try
-        {
-            Query q = session.createQuery("from Precipitacao p where p.cod_precipitacao = :cod_precipitacao");
-            q.setParameter("id" , valorPrecipitacao.getCodPrecipitacao());
-            valorPrecipitacao = (Precipitacao) q.list().get(0);
-            System.out.println("Deu certo !");
-        }
-        catch (Exception e)
-        {
-            this.mensagem = "erro de leitura no BD";                            
-            System.out.println(e);                      
-        }
-        return valorPrecipitacao;
+        PrecipitacaoBean precipitacao = new PrecipitacaoBean();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query q = session.createSQLQuery("SELECT SCOPE_IDENTITY()");
+        precipitacao.setValorPrecipitacao((int) q.list().get(0));
+        System.out.println("opa bão precipitacaoDAO da uma OLHADA");
     }
-    
+
     public String getMensagem()
     {
         return mensagem;
@@ -42,4 +31,6 @@ public class PrecipitacaoDAO
         this.mensagem = mensagem;
     }
 
+    //.uniqueResult()).longValue();
+    //Long lastId = ((BigInteger) session.createSQLQuery("SELECT LAST_INSERT_ID()").uniqueResult()).longValue();
 }

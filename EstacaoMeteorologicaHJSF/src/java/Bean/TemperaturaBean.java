@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo.entidade;
+package Bean;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
     , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")
 })
-public class Temperatura implements Serializable
+public class TemperaturaBean implements Serializable
 {
 
     private static final long serialVersionUID = 1L;
@@ -47,16 +47,16 @@ public class Temperatura implements Serializable
     @Column(name = "valor_temperatura")
     private int valorTemperatura;
 
-    public Temperatura()
+    public TemperaturaBean()
     {
     }
 
-    public Temperatura(Integer codTemperatura)
+    public TemperaturaBean(Integer codTemperatura)
     {
         this.codTemperatura = codTemperatura;
     }
 
-    public Temperatura(Integer codTemperatura, int valorTemperatura)
+    public TemperaturaBean(Integer codTemperatura, int valorTemperatura)
     {
         this.codTemperatura = codTemperatura;
         this.valorTemperatura = valorTemperatura;
@@ -94,11 +94,11 @@ public class Temperatura implements Serializable
     public boolean equals(Object object)
     {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Temperatura))
+        if (!(object instanceof TemperaturaBean))
         {
             return false;
         }
-        Temperatura other = (Temperatura) object;
+        TemperaturaBean other = (TemperaturaBean) object;
         if ((this.codTemperatura == null && other.codTemperatura != null) || (this.codTemperatura != null && !this.codTemperatura.equals(other.codTemperatura)))
         {
             return false;

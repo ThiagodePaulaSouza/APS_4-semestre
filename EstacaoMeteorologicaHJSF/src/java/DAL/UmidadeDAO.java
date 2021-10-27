@@ -4,7 +4,7 @@ package DAL;
  *
  * @author Usuario
  */
-import Modelo.entidade.Umidade;
+import Bean.UmidadeBean;
 import DAL.Util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -15,13 +15,13 @@ public class UmidadeDAO
     private String mensagem;
     Session session = HibernateUtil.getSessionFactory().openSession();
     
-   public Umidade pesquisarUmidadePorId(Umidade valorUmidade)
+   public UmidadeBean pesquisarUmidadePorId(UmidadeBean valorUmidade)
     {
         try
         {
             Query q = session.createQuery("from Umidade u where u.cod_umidade = :cod_umidade");
             q.setParameter("id" , valorUmidade.getCodUmidade());
-            valorUmidade = (Umidade) q.list().get(0);
+            valorUmidade = (UmidadeBean) q.list().get(0);
             System.out.println("Deu certo !");
         }
         catch (Exception e)
@@ -32,7 +32,7 @@ public class UmidadeDAO
         return valorUmidade;
     }
 
-    public void cadastrarUmidade(Umidade umidade)
+    public void cadastrarUmidade(UmidadeBean umidade)
     {
         this.mensagem = "";
         try
@@ -50,7 +50,7 @@ public class UmidadeDAO
         }
     }
 
-    public void editarUmidade(Umidade umidade)
+    public void editarUmidade(UmidadeBean umidade)
     {
         this.mensagem = "";
         try
@@ -67,7 +67,7 @@ public class UmidadeDAO
         }
     }
 //    
-//    public void excluirUmidade(Umidade umidade)
+//    public void excluirUmidade(UmidadeBean umidade)
 //    {
 //        this.mensagem = "";
 //        try
@@ -76,7 +76,7 @@ public class UmidadeDAO
 //            session.delete(umidade);
 //            session.getTransaction().commit();
 //            session.close();
-//            this.mensagem = "Umidade Excluida com Sucesso !";
+//            this.mensagem = "UmidadeBean Excluida com Sucesso !";
 //        }
 //        catch(Exception e)
 //        {

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo.entidade;
+package Bean;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Umidade.findByCodUmidade", query = "SELECT u FROM Umidade u WHERE u.codUmidade = :codUmidade")
     , @NamedQuery(name = "Umidade.findByValorUmidade", query = "SELECT u FROM Umidade u WHERE u.valorUmidade = :valorUmidade")
 })
-public class Umidade implements Serializable
+public class UmidadeBean implements Serializable
 {
 
     private static final long serialVersionUID = 1L;
@@ -47,16 +47,16 @@ public class Umidade implements Serializable
     @Column(name = "valor_umidade")
     private double valorUmidade;
 
-    public Umidade()
+    public UmidadeBean()
     {
     }
 
-    public Umidade(Integer codUmidade)
+    public UmidadeBean(Integer codUmidade)
     {
         this.codUmidade = codUmidade;
     }
 
-    public Umidade(Integer codUmidade, double valorUmidade)
+    public UmidadeBean(Integer codUmidade, double valorUmidade)
     {
         this.codUmidade = codUmidade;
         this.valorUmidade = valorUmidade;
@@ -94,11 +94,11 @@ public class Umidade implements Serializable
     public boolean equals(Object object)
     {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Umidade))
+        if (!(object instanceof UmidadeBean))
         {
             return false;
         }
-        Umidade other = (Umidade) object;
+        UmidadeBean other = (UmidadeBean) object;
         if ((this.codUmidade == null && other.codUmidade != null) || (this.codUmidade != null && !this.codUmidade.equals(other.codUmidade)))
         {
             return false;

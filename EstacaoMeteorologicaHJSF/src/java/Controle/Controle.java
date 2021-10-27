@@ -1,12 +1,12 @@
 package Controle;
 
 import Validacao.Validacao;
-import Modelo.entidade.Temperatura;
-import Modelo.entidade.Precipitacao;
+import Bean.TemperaturaBean;
+import Bean.PrecipitacaoBean;
 import DAL.TemperaturaDAO;
 import DAL.PrecipitacaoDAO;
 import DAL.UmidadeDAO;
-import Modelo.entidade.Umidade;
+import Bean.UmidadeBean;
 import java.util.List;
 
 public class Controle
@@ -21,7 +21,7 @@ public class Controle
 //        validacao.validarDadosTemperatura(dadosTemperatura);
 //        if (validacao.getMensagem().equals(""))
 //        {
-//            Temperatura temperatura = new Temperatura();
+//            TemperaturaBean temperatura = new TemperaturaBean();
 //            temperatura.setCodTemperatura(validacao.getId());
 //            temperatura.setValorTemperatura(Integer.parseInt(dadosTemperatura.get(1)));
 //            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
@@ -41,7 +41,7 @@ public class Controle
 //        validacao.validarDadosTemperatura(dadosTemperatura);
 //        if (validacao.getMensagem().equals(""))
 //        {
-//            Temperatura temperatura = new Temperatura();
+//            TemperaturaBean temperatura = new TemperaturaBean();
 //            temperatura.setCodTemperatura(validacao.getId());
 //            temperatura.setValorTemperatura(Integer.parseInt(dadosTemperatura.get(1)));
 //            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
@@ -52,12 +52,12 @@ public class Controle
 //        {
 //            this.mensagem = validacao.getMensagem();
 //        }
-    public Temperatura pesquisarTemperaturaPorId(String temperaturaId)
+    public TemperaturaBean pesquisarTemperaturaPorId(String temperaturaId)
     {
         this.mensagem = "";
         Validacao validacao = new Validacao();
         validacao.validarIdTemperatura(temperaturaId);
-        Temperatura temperatura = new Temperatura();
+        TemperaturaBean temperatura = new TemperaturaBean();
         if (validacao.getMensagem().equals(""))
         {
             temperatura.setCodTemperatura(validacao.getId());
@@ -79,7 +79,7 @@ public class Controle
 //        validacao.validarDadosPrecipitacao(dadosPrecipitacao);
 //        if (validacao.getMensagem().equals(""))
 //        {
-//            Precipitacao precipitacao = new Precipitacao();
+//            PrecipitacaoBean precipitacao = new PrecipitacaoBean();
 //            precipitacao.setCodPrecipitacao(validacao.getId());
 //            precipitacao.setValorPrecipitacao(Double.parseDouble(dadosPrecipitacao.get(1)));
 //            PrecipitacaoDAO precipitacaoDAO = new PrecipitacaoDAO();
@@ -99,7 +99,7 @@ public class Controle
 //        validacao.validarDadosPrecipitacao(dadosPrecipitacao);
 //        if (validacao.getMensagem().equals(""))
 //        {
-//            Precipitacao precipitacao = new Precipitacao();
+//            PrecipitacaoBean precipitacao = new PrecipitacaoBean();
 //            precipitacao.setCodPrecipitacao(validacao.getId());
 //            precipitacao.setValorPrecipitacao(Double.parseDouble(dadosPrecipitacao.get(1)));
 //            PrecipitacaoDAO  precipitacaoDAO = new  PrecipitacaoDAO();
@@ -110,25 +110,25 @@ public class Controle
 //        {
 //            this.mensagem = validacao.getMensagem();
 //        }
-    public Precipitacao pesquisarPrecipitacaoPorId(String precipitacaoId)
-    {
-        this.mensagem = "";
-        Validacao validacao = new Validacao();
-        validacao.validarIdPrecipitacao(precipitacaoId);
-        Precipitacao precipitacao = new Precipitacao();
-        if (validacao.getMensagem().equals(""))
-        {
-            precipitacao.setCodPrecipitacao(validacao.getId());
-            PrecipitacaoDAO precipitacaoDAO = new PrecipitacaoDAO();
-            precipitacao = precipitacaoDAO.pesquisarPrecipitacaoPorId(precipitacao);
-            this.mensagem = precipitacaoDAO.getMensagem();
-        }
-        else
-        {
-            this.mensagem = validacao.getMensagem();
-        }
-        return precipitacao;
-    }
+//    public PrecipitacaoBean pesquisarPrecipitacaoPorId(String precipitacaoId)
+//    {
+//        this.mensagem = "";
+//        Validacao validacao = new Validacao();
+//        validacao.validarIdPrecipitacao(precipitacaoId);
+//        PrecipitacaoBean precipitacao = new PrecipitacaoBean();
+//        if (validacao.getMensagem().equals(""))
+//        {
+//            precipitacao.setCodPrecipitacao(validacao.getId());
+//            PrecipitacaoDAO precipitacaoDAO = new PrecipitacaoDAO();
+//            precipitacao = precipitacaoDAO.pesquisarPrecipitacaoPorId(precipitacao);
+//            this.mensagem = precipitacaoDAO.getMensagem();
+//        }
+//        else
+//        {
+//            this.mensagem = validacao.getMensagem();
+//        }
+//        return precipitacao;
+//    }
 
 //    public void cadastrarPrecipitacao(List<String> dadosPrecipitacao) // AQUI É UMIDADE EU ERREI ...
 //    {
@@ -137,7 +137,7 @@ public class Controle
 //        validacao.validarDadosPrecipitacao(dadosPrecipitacao);
 //        if (validacao.getMensagem().equals(""))
 //        {
-//            Precipitacao precipitacao = new Precipitacao();
+//            PrecipitacaoBean precipitacao = new PrecipitacaoBean();
 //            precipitacao.setCodPrecipitacao(validacao.getId());
 //            precipitacao.setValorPrecipitacao(Integer.parseInt(dadosPrecipitacao.get(1)));
 //            PrecipitacaoDAO precipitacaoDAO = new PrecipitacaoDAO();
@@ -157,7 +157,7 @@ public class Controle
 //        validacao.validarDadosPrecipitacao(dadosPrecipitacao);
 //        if (validacao.getMensagem().equals(""))
 //        {
-//            Precipitacao precipitacao = new Precipitacao();
+//            PrecipitacaoBean precipitacao = new PrecipitacaoBean();
 //            precipitacao.setCodPrecipitacao(validacao.getId());
 //            precipitacao.setValorPrecipitacao(Integer.parseInt(dadosPrecipitacao.get(1)));
 //            PrecipitacaoDAO precipitacaoDAO = new PrecipitacaoDAO();
@@ -168,12 +168,12 @@ public class Controle
 //        {
 //            this.mensagem = validacao.getMensagem();
 //        }
-    public Umidade pesquisarUmidadePorId(String umidadeId)
+    public UmidadeBean pesquisarUmidadePorId(String umidadeId)
     {
         this.mensagem = "";
         Validacao validacao = new Validacao();
         validacao.validarIdUmidade(umidadeId);
-        Umidade umidade = new Umidade();
+        UmidadeBean umidade = new UmidadeBean();
         if (validacao.getMensagem().equals(""))
         {
             umidade.setCodUmidade(validacao.getId());
