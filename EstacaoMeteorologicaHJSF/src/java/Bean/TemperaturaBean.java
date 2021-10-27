@@ -5,6 +5,7 @@
  */
 package Bean;
 
+import Controle.Controle;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -29,11 +30,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "temperatura")
 @XmlRootElement
 @NamedQueries(
-{
-    @NamedQuery(name = "Temperatura.findAll", query = "SELECT t FROM Temperatura t")
-    , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
-    , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")
-})
+        {
+            @NamedQuery(name = "Temperatura.findAll", query = "SELECT t FROM Temperatura t")
+            , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
+            , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")
+        })
 public class TemperaturaBean implements Serializable
 {
 
@@ -60,6 +61,13 @@ public class TemperaturaBean implements Serializable
     {
         this.codTemperatura = codTemperatura;
         this.valorTemperatura = valorTemperatura;
+    }
+
+    public int getPegaValorTemperatura()
+    {
+        Controle controle = new Controle();
+        return controle.pesquisarTemperaturaPorId();
+
     }
 
     public Integer getCodTemperatura()
@@ -111,5 +119,5 @@ public class TemperaturaBean implements Serializable
     {
         return "br.com.estacao.entidade.Temperatura[ codTemperatura=" + codTemperatura + " ]";
     }
-    
+
 }

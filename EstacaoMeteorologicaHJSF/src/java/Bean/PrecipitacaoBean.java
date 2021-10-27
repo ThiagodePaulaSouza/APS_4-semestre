@@ -30,13 +30,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "precipitacao")
 @XmlRootElement
 @NamedQueries(
-{
-    @NamedQuery(name = "Precipitacao.findAll", query = "SELECT p FROM Precipitacao p")
-    , @NamedQuery(name = "Precipitacao.findByCodPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.codPrecipitacao = :codPrecipitacao")
-    , @NamedQuery(name = "Precipitacao.findByValorPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.valorPrecipitacao = :valorPrecipitacao")
-})
+        {
+            @NamedQuery(name = "Precipitacao.findAll", query = "SELECT p FROM Precipitacao p")
+            , @NamedQuery(name = "Precipitacao.findByCodPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.codPrecipitacao = :codPrecipitacao")
+            , @NamedQuery(name = "Precipitacao.findByValorPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.valorPrecipitacao = :valorPrecipitacao")
+        })
 public class PrecipitacaoBean implements Serializable
 {
+
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,10 +47,8 @@ public class PrecipitacaoBean implements Serializable
     private Integer codPrecipitacao;
     @Basic(optional = false)
     @Column(name = "valor_precipitacao")
-    private int valorPrecipitacao;//precisa receber algo
-    
-    
-    
+    private int valorPrecipitacao;
+
     public PrecipitacaoBean()
     {
     }
@@ -113,5 +113,5 @@ public class PrecipitacaoBean implements Serializable
     {
         return "br.com.estacao.entidade.Precipitacao[ codPrecipitacao=" + codPrecipitacao + " ]";
     }
-    
+
 }
