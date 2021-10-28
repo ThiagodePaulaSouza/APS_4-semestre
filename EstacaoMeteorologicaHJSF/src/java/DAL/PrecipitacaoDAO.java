@@ -4,7 +4,7 @@ package DAL;
  *
  * @author Usuario
  */
-import Bean.PrecipitacaoBean;
+import Modelo.Precipitacao;
 import DAL.Util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
