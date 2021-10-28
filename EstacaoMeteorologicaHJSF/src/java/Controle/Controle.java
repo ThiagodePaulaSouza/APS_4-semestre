@@ -1,12 +1,12 @@
 package Controle;
 
 import Validacao.Validacao;
-import Bean.TemperaturaBean;
+import Modelo.Temperatura;
 //import Bean.PrecipitacaoBean;
 import DAL.TemperaturaDAO;
 //import DAL.PrecipitacaoDAO;
 import DAL.UmidadeDAO;
-import Bean.UmidadeBean;
+import Modelo.Umidade;
 import java.util.List;
 
 public class Controle 
@@ -21,7 +21,7 @@ public class Controle
         this.mensagem = "";
         Validacao validacao = new Validacao();
         TemperaturaDAO temperaturaDao = new TemperaturaDAO();
-        TemperaturaBean temperaturaBean = new TemperaturaBean();
+        Temperatura temperaturaBean = new Temperatura();
         System.out.println("ENTROU DENTRO DE PESQUISAR T P I");
         //----------------------------COM ERRO ---------------------------------
         validacao.validarValorTemperatura(temperaturaDao.pesquisarTemperatura());
@@ -61,12 +61,12 @@ public class Controle
 //        return precipitacao;
 //    }
 
-    public UmidadeBean pesquisarUmidadePorId(String umidadeId)
+    public Umidade pesquisarUmidadePorId(String umidadeId)
     {
         this.mensagem = "";
         Validacao validacao = new Validacao();
         validacao.validarIdUmidade(umidadeId);
-        UmidadeBean umidade = new UmidadeBean();
+        Umidade umidade = new Umidade();
         if (validacao.getMensagem().equals(""))
         {
             umidade.setCodUmidade(validacao.getId());

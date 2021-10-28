@@ -5,7 +5,7 @@
  */
 package DAL;
 
-import Bean.TemperaturaBean;
+import Modelo.Temperatura;
 import DAL.Util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -20,7 +20,7 @@ public class TemperaturaDAO
     {
         try
         {
-            TemperaturaBean t =  (TemperaturaBean) session.createQuery("from Temperatura ORDER BY cod_temperataura DESC").setMaxResults(1).uniqueResult();
+            Temperatura t =  (Temperatura) session.createQuery("from Temperatura ORDER BY cod_temperataura DESC").setMaxResults(1).uniqueResult();
             temperatura = t.getValorTemperatura();
             System.out.println("Deu certo !");
         }
