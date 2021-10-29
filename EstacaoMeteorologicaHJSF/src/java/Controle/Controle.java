@@ -20,14 +20,16 @@ public class Controle
 
     public void cadastrarTemperatura()
     {
+        Serial serial = new Serial();
+        serial.iniciaSerial();
         this.mensagem = "";
         Validacao validacao = new Validacao();
+        TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
         validacao.validarValorTemperatura(Integer.parseInt(Protocolo.temperatura));
         if (validacao.getMensagem().equals(""))
         {
             Temperatura temperatura = new Temperatura();
             temperatura.setValorTemperatura(validacao.getValorTemperatura());
-            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
             temperaturaDAO.cadastrarTemperatura(temperatura);
             this.mensagem = temperaturaDAO.getMensagem();
         }
@@ -35,15 +37,15 @@ public class Controle
         {
             this.mensagem = validacao.getMensagem();
         }
+        serial.close();
 
     }
 
     public Temperatura pesquisarTemperatura()
     {
+        cadastrarTemperatura();
         Serial serial = new Serial();
         serial.iniciaSerial();
-        cadastrarTemperatura();
-        
         this.mensagem = "";
         Validacao validacao = new Validacao();
         TemperaturaDAO temperaturaDao = new TemperaturaDAO();
