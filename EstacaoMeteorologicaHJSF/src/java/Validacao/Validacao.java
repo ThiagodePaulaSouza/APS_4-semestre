@@ -51,10 +51,15 @@ public class Validacao
         this.mensagem = "";
         try
         {
-            this.valorTemperatura = valorTemperatura;
+            if (valorTemperatura.equals(""))
+            {
+                this.valorTemperatura = valorTemperatura;
+            }
         }
         catch (Exception e)
         {
+            this.mensagem = "Valor de Temperatura Inválido";
+            System.out.println(e);
         }
     }
 

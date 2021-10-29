@@ -6,24 +6,51 @@ import Modelo.Temperatura;
 import DAL.TemperaturaDAO;
 //import DAL.PrecipitacaoDAO;
 import DAL.UmidadeDAO;
+import Modelo.Protocolo;
+import Modelo.Serial;
 import Modelo.Umidade;
 import java.util.List;
 
-public class Controle 
+public class Controle
 {
+
     private Controle controle;
 
     private String mensagem;
-    private int temperatura;
+
+    public void cadastrarTemperatura()
+    {
+        this.mensagem = "";
+        Validacao validacao = new Validacao();
+        validacao.validarValorTemperatura(Integer.parseInt(Protocolo.temperatura));
+        if (validacao.getMensagem().equals(""))
+        {
+            Temperatura temperatura = new Temperatura();
+            temperatura.setValorTemperatura(validacao.getValorTemperatura());
+            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
+            temperaturaDAO.cadastrarTemperatura(temperatura);
+            this.mensagem = temperaturaDAO.getMensagem();
+        }
+        else
+        {
+            this.mensagem = validacao.getMensagem();
+        }
+
+    }
 
     public Temperatura pesquisarTemperatura()
     {
+        Serial serial = new Serial();
+        serial.iniciaSerial();
+        cadastrarTemperatura();
+        
         this.mensagem = "";
         Validacao validacao = new Validacao();
         TemperaturaDAO temperaturaDao = new TemperaturaDAO();
         Temperatura temperatura = new Temperatura();
         validacao.validarCodTemperatura(temperatura.getCodTemperatura().toString());
-        
+        validacao.validarValorTemperatura(temperatura.getValorTemperatura());
+
         if (validacao.getMensagem().equals(""))
         {
             temperatura.setCodTemperatura(validacao.getId());
@@ -35,10 +62,11 @@ public class Controle
         {
             this.mensagem = validacao.getMensagem();
         }
+        
+        serial.close();
         return temperatura;
     }
 
-        
 //    public PrecipitacaoBean pesquisarPrecipitacaoPorId(String precipitacaoId)
 //    {
 //        this.mensagem = "";
@@ -58,7 +86,6 @@ public class Controle
 //        }
 //        return precipitacao;
 //    }
-
     public Umidade pesquisarUmidadePorId(String umidadeId)
     {
         this.mensagem = "";
@@ -97,16 +124,6 @@ public class Controle
     public void setControle(Controle controle)
     {
         this.controle = controle;
-    }
-
-    public int getTemperatura()
-    {
-        return temperatura;
-    }
-
-    public void setTemperatura(int temperatura)
-    {
-        this.temperatura = temperatura;
     }
 
 }
