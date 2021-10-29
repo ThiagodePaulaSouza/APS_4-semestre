@@ -51,7 +51,7 @@ public class Validacao
         this.mensagem = "";
         try
         {
-            if (valorTemperatura.equals(""))
+            if (!valorTemperatura.equals(""))
             {
                 this.valorTemperatura = valorTemperatura;
             }
