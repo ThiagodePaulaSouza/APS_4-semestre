@@ -34,6 +34,18 @@ public class Validacao
         this.validarValorPrecipitacao(dadosPrecipitacao.get(1));
     }
 
+    public void validarCodTemperatura(String numeroId){
+        this.mensagem = "";
+        try
+        {
+            this.id = Integer.parseInt(numeroId);
+        }
+        catch (Exception e)
+        {
+            this.mensagem += "ID inválido \n";
+        }
+    }
+    
     public void validarValorTemperatura(Integer valorTemperatura)
     {
         this.mensagem = "";
