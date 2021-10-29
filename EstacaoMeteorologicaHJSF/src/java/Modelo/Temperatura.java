@@ -7,8 +7,6 @@ package Modelo;
 
 import Controle.Controle;
 import java.io.Serializable;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -59,13 +57,6 @@ public class Temperatura implements Serializable
     {
         this.codTemperatura = codTemperatura;
         this.valorTemperatura = valorTemperatura;
-    }
-
-    public int getPegaValorTemperatura()
-    {
-        Controle controle = new Controle();
-        return controle.pesquisarTemperaturaPorId();
-
     }
 
     public Integer getCodTemperatura()
