@@ -16,28 +16,26 @@ public class Controle
     private String mensagem;
     private int temperatura;
 
-    public int pesquisarTemperaturaPorId()
+    public Temperatura pesquisarTemperatura()
     {
         this.mensagem = "";
         Validacao validacao = new Validacao();
         TemperaturaDAO temperaturaDao = new TemperaturaDAO();
-        Temperatura temperaturaBean = new Temperatura();
-        System.out.println("ENTROU DENTRO DE PESQUISAR T P I");
-        //----------------------------COM ERRO ---------------------------------
-        validacao.validarValorTemperatura(temperaturaDao.pesquisarTemperatura());
+        Temperatura temperatura = new Temperatura();
+        validacao.validarCodTemperatura(temperatura.getCodTemperatura().toString());
         
         if (validacao.getMensagem().equals(""))
         {
-            temperaturaBean.setValorTemperatura(validacao.getValorTemperatura());
+            temperatura.setCodTemperatura(validacao.getId());
+            temperatura.setValorTemperatura(validacao.getValorTemperatura());
+            temperatura = temperaturaDao.pesquisarTemperaturaPorId(temperatura);
             this.mensagem = temperaturaDao.getMensagem();
-            return 42;
         }
         else
         {
             this.mensagem = validacao.getMensagem();
-            return 100;
         }
-        //----------------------------COM ERRO ---------------------------------
+        return temperatura;
     }
 
         

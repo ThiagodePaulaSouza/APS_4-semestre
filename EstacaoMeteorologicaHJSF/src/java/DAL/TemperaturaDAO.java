@@ -5,6 +5,7 @@
  */
 package DAL;
 
+import Bean.TemperaturaBean;
 import Modelo.Temperatura;
 import DAL.Util.HibernateUtil;
 import org.hibernate.Query;
@@ -15,13 +16,13 @@ public class TemperaturaDAO
 
     private String mensagem;
     private Session session = HibernateUtil.getSessionFactory().openSession();
-    private Integer temperatura;
-    public Integer pesquisarTemperatura()
+    public Temperatura pesquisarTemperaturaPorId(Temperatura temperatura)
     {
         try
         {
-            Temperatura t =  (Temperatura) session.createQuery("from Temperatura ORDER BY cod_temperataura DESC").setMaxResults(1).uniqueResult();
-            temperatura = t.getValorTemperatura();
+            Query q = session.createQuery("from Temperatura t where t.cod_temperatura = :cod_temperatura");
+            q.setParameter("cod_temperatura", temperatura.getCodTemperatura());
+            temperatura =  (Temperatura) q.list().get(0);
             System.out.println("Deu certo !");
         }
         catch (Exception e)

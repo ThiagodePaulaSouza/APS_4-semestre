@@ -18,6 +18,8 @@ public class Protocolo
             this.temperatura = aux[1];
             this.precipitacao = aux [2];
         }
+        
+        //Chama 3 metodos para Cadastrar no Banco de Dados
     }
     public String getLeituraComando()
     {
