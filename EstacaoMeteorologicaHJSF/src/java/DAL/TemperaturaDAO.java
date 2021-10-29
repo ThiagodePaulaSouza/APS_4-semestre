@@ -16,13 +16,32 @@ public class TemperaturaDAO
 
     private String mensagem;
     private Session session = HibernateUtil.getSessionFactory().openSession();
+
+    public void cadastrarTemperatura(Temperatura temperatura)
+    {
+        this.mensagem = "";
+        try
+        {
+            session.beginTransaction();
+            session.save(temperatura);
+            session.getTransaction().commit();
+            session.close();
+            this.mensagem = "Temperatura Cadastrada Com Sucesso!!!";
+        }
+        catch (Exception e)
+        {
+            this.mensagem = "Erro de Gravação no BD";
+            System.out.println(e);
+        }
+    }
+
     public Temperatura pesquisarTemperaturaPorId(Temperatura temperatura)
     {
         try
         {
             Query q = session.createQuery("from Temperatura t where t.cod_temperatura = :cod_temperatura");
             q.setParameter("cod_temperatura", temperatura.getCodTemperatura());
-            temperatura =  (Temperatura) q.list().get(0);
+            temperatura = (Temperatura) q.list().get(0);
             System.out.println("Deu certo !");
         }
         catch (Exception e)
