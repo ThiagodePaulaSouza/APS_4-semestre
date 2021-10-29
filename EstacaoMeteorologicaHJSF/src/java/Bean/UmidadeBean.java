@@ -1,5 +1,7 @@
 package Bean;
 
+import Controle.Controle;
+import Modelo.Umidade;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.view.ViewScoped;
@@ -29,11 +31,13 @@ public class UmidadeBean
 
     public int getValor()
     {
+        
         return valor;
     }
 
     public void setValor(int valor)
     {
+        
         this.valor = valor;
     }
 
