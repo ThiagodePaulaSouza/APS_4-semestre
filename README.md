@@ -3,13 +3,13 @@
 
 ## 👷‍♂️Como Rodar:
 
-##### Faça Fork do Projeto e Copie o Url:
+#### Faça Fork do Projeto e Copie o Url:
 
 Entre no netbeans > clique em equipe > Git > Clonar... > Insira a url do seu repositório(fork), coloque seu usuario e a senha do seu repositório e pasta para onde vai ser clonado >  próximo > marque a ramificação main > próximo > escolha o diretório > finalizar.
 
 
 
-##### Tendo o Arduino em Mãos:
+#### Tendo o Arduino em Mãos, Configure:
 
 Abra o Arduino IDE > clique em Ferramentas > Placa:"" > Selecione sua placa > Porta > Selecione sua Porta (Lembrar que caso sua porta seja diferente de COM3, será necessário alterar no Serial.java).
 
