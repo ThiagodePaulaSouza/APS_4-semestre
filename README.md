@@ -3,24 +3,46 @@
 
 ## 👷‍♂️Como Rodar:
 
-#### Faça Fork do Projeto e Copie o Url:
+#### 1. Faça Fork do Projeto e Copie o Url:
 
-Entre no netbeans > clique em equipe > Git > Clonar... > Insira a url do seu repositório(fork), coloque seu usuario e a senha do seu repositório e pasta para onde vai ser clonado >  próximo > marque a ramificação main > próximo > escolha o diretório > finalizar.
+- Abra o NetBeans IDE 8.2
+- clique em equipe > Git > Clonar... 
+- Insira a url do seu repositório(fork), coloque seu usuario e a senha do seu repositório e pasta para onde vai ser clonado >  próximo.
+- marque a ramificação main > próximo.
+- escolha o diretório > finalizar.
 
+#### 2. Configure o Projeto
 
+- Copie e cole o rxtxSerial.dll para a pasta C:\Program Files\Java\jdk1.8.0_311\bin
 
-#### Tendo o Arduino em Mãos, Configure:
+- Clique com o botão direiro no Projeto > Propriedades > Executar > em Opções de VM:
 
-Abra o Arduino IDE > clique em Ferramentas > Placa:"" > Selecione sua placa > Porta > Selecione sua Porta (Lembrar que caso sua porta seja diferente de COM3, será necessário alterar no Serial.java).
+- -Djava.library.path="C:\Program Files\Java\jdk1.8.0_311\bin"
 
-Clique em arquivo > abrir... > selecione a pasta \sketch_APS\sketch_sep30a > selecione o arquivo sketch_sep30a.ino > clique em Abrir.
+  
 
-Clique em Sketch> Incluir Biblioteca > Adicionar Biblioteca.zip > selecione a pasta \sketch_APS > selecione o arquivo DHT.zip > clique em Abrir.
+#### 3. Tendo o Arduino Montado em Mãos, Configure o Arduino:
+
+- Abra o Arduino IDE 
+
+- Clique em Ferramentas > Placa:"" > Selecione sua placa.
+
+- Clique em Ferramentas > Porta > Selecione sua Porta (Lembrar que caso sua porta seja diferente de COM3, será necessário alterar no Serial.java).
+
+- Clique em arquivo > abrir... > selecione a pasta \sketch_APS\sketch_sep30a > selecione o arquivo sketch_sep30a.ino > clique em Abrir.
+
+- Clique em Sketch> Incluir Biblioteca > Adicionar Biblioteca.zip > selecione a pasta \sketch_APS > selecione o arquivo DHT.zip > clique em Abrir.
+
+- Verifique se há algum erro no botão ✅
+
+- Mande o código para o Arduino no botão ➡
+
+  
 
 
 ## 🥳 Como Ajudar:
 
-(recomendado que seja pelo git bash)
+(recomendado que processo seja efetuado pelo git bash)
 
 
 
