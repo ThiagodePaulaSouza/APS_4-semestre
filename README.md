@@ -15,7 +15,7 @@
 
 - Copie e cole o rxtxSerial.dll para a pasta C:\Program Files\Java\jdk1.8.0_311\bin
 
-- Clique com o botão direiro no Projeto > Propriedades > Executar > em Opções de VM:
+- Clique com o botão direito no Projeto > Propriedades > Executar > em Opções de VM:
 
 - -Djava.library.path="C:\Program Files\Java\jdk1.8.0_311\bin"
 
