@@ -5,7 +5,6 @@
  */
 package Modelo;
 
-import Controle.Controle;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -20,17 +19,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Usuario
+ * @author 55159
  */
 @Entity
 @Table(name = "temperatura")
 @XmlRootElement
 @NamedQueries(
-        {
-            @NamedQuery(name = "Temperatura.findAll", query = "SELECT t FROM Temperatura t")
-            , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
-            , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")
-        })
+{
+    @NamedQuery(name = "Temperatura.findAll", query = "SELECT t FROM Temperatura t")
+    , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
+    , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")
+})
 public class Temperatura implements Serializable
 {
 
@@ -106,7 +105,7 @@ public class Temperatura implements Serializable
     @Override
     public String toString()
     {
-        return "br.com.estacao.entidade.Temperatura[ codTemperatura=" + codTemperatura + " ]";
+        return "Modelo.Temperatura[ codTemperatura=" + codTemperatura + " ]";
     }
-
+    
 }

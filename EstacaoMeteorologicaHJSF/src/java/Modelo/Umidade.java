@@ -6,8 +6,6 @@
 package Modelo;
 
 import java.io.Serializable;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Usuario
+ * @author 55159
  */
 @Entity
 @Table(name = "umidade")
@@ -107,7 +105,7 @@ public class Umidade implements Serializable
     @Override
     public String toString()
     {
-        return "br.com.estacao.entidade.Umidade[ codUmidade=" + codUmidade + " ]";
+        return "Modelo.Umidade[ codUmidade=" + codUmidade + " ]";
     }
     
 }
