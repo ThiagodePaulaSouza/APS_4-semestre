@@ -1,45 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
-        <file>
-            <url>src/java/Modelo/Serial.java</url>
-            <bookmark id="3">
-                <name/>
-                <line>25</line>
-                <key/>
-            </bookmark>
-            <bookmark id="2">
-                <name/>
-                <line>32</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>src/java/Controle/Controle.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>22</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Controle/Controle.java</file>
             <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Bean/TemperaturaBean.java</file>
             <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Validacao/Validacao.java</file>
             <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Modelo/Serial.java</file>
-            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Modelo/Temperatura.java</file>
+            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/web/welcomePrimefaces.xhtml</file>
             <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/DAL/TemperaturaDAO.java</file>
-=======
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Modelo/Precipitacao.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Modelo/Temperatura.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Bean/TemperaturaBean.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Controle/Controle.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Modelo/Serial.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Modelo/Umidade.java</file>
->>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
+            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS_4-semestre/EstacaoMeteorologicaHJSF/web/index.xhtml</file>
         </group>
     </open-files>
 </project-private>

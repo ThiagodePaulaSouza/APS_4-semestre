@@ -5,6 +5,9 @@
     <class>Modelo.Precipitacao</class>
     <class>Modelo.Temperatura</class>
     <class>Modelo.Umidade</class>
+    <class>Bean.Umidade</class>
+    <class>Bean.Precipitacao</class>
+    <class>Bean.Temperatura</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=Estacao"/>
