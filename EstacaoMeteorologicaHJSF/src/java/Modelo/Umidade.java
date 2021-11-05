@@ -19,7 +19,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
+<<<<<<< HEAD
  * @author Sandro
+=======
+ * @author 55159
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
  */
 @Entity
 @Table(name = "umidade")
@@ -89,7 +93,12 @@ public class Umidade implements Serializable {
     }
 
     @Override
+<<<<<<< HEAD
     public String toString() {
+=======
+    public String toString()
+    {
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
         return "Modelo.Umidade[ codUmidade=" + codUmidade + " ]";
     }
     

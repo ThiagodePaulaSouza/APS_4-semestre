@@ -19,16 +19,31 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
+<<<<<<< HEAD
  * @author Sandro
+=======
+ * @author 55159
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
  */
 @Entity
 @Table(name = "precipitacao")
 @XmlRootElement
+<<<<<<< HEAD
 @NamedQueries({
     @NamedQuery(name = "Precipitacao.findAll", query = "SELECT p FROM Precipitacao p")
     , @NamedQuery(name = "Precipitacao.findByCodPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.codPrecipitacao = :codPrecipitacao")
     , @NamedQuery(name = "Precipitacao.findByValorPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.valorPrecipitacao = :valorPrecipitacao")})
 public class Precipitacao implements Serializable {
+=======
+@NamedQueries(
+{
+    @NamedQuery(name = "Precipitacao.findAll", query = "SELECT p FROM Precipitacao p")
+    , @NamedQuery(name = "Precipitacao.findByCodPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.codPrecipitacao = :codPrecipitacao")
+    , @NamedQuery(name = "Precipitacao.findByValorPrecipitacao", query = "SELECT p FROM Precipitacao p WHERE p.valorPrecipitacao = :valorPrecipitacao")
+})
+public class Precipitacao implements Serializable
+{
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -89,7 +104,12 @@ public class Precipitacao implements Serializable {
     }
 
     @Override
+<<<<<<< HEAD
     public String toString() {
+=======
+    public String toString()
+    {
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
         return "Modelo.Precipitacao[ codPrecipitacao=" + codPrecipitacao + " ]";
     }
     

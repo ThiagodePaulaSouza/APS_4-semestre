@@ -45,8 +45,11 @@ Contributor(s):
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/estacao?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
+<<<<<<< HEAD
     <mapping class="Modelo.Temperatura"/>
     <mapping class="Modelo.Precipitacao"/>
     <mapping class="Modelo.Umidade"/>
+=======
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
   </session-factory>
 </hibernate-configuration>

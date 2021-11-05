@@ -19,16 +19,31 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
+<<<<<<< HEAD
  * @author Sandro
+=======
+ * @author 55159
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
  */
 @Entity
 @Table(name = "temperatura")
 @XmlRootElement
+<<<<<<< HEAD
 @NamedQueries({
     @NamedQuery(name = "Temperatura.findAll", query = "SELECT t FROM Temperatura t")
     , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
     , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")})
 public class Temperatura implements Serializable {
+=======
+@NamedQueries(
+{
+    @NamedQuery(name = "Temperatura.findAll", query = "SELECT t FROM Temperatura t")
+    , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
+    , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")
+})
+public class Temperatura implements Serializable
+{
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -89,7 +104,12 @@ public class Temperatura implements Serializable {
     }
 
     @Override
+<<<<<<< HEAD
     public String toString() {
+=======
+    public String toString()
+    {
+>>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
         return "Modelo.Temperatura[ codTemperatura=" + codTemperatura + " ]";
     }
     
