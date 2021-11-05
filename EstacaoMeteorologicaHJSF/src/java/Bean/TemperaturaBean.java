@@ -24,27 +24,6 @@ public class TemperaturaBean {
     private int valor;
 
     public Integer getCod() {
-<<<<<<< HEAD
-=======
-//        Serial serial = new Serial();
-//        if (serial.iniciaSerial())
-//        {
-//            
-//        }
-//        serial.close();
-        /*Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-
-            }
-        };timer.schedule(task, 0, 1000);*/
-
-        Controle controle = new Controle();
-        Temperatura temperatura = controle.pesquisarTemperatura();
-        cod = temperatura.getCodTemperatura();
-
->>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
         return cod;
     }
 
@@ -53,7 +32,6 @@ public class TemperaturaBean {
     }
 
     public int getValor() {
-<<<<<<< HEAD
         Serial serial = new Serial();
         serial.iniciaSerial();
 
@@ -72,27 +50,6 @@ public class TemperaturaBean {
             Estaticos.listaTemperatura = listaTemperatura;
             valor = Estaticos.temperatura.getValorTemperatura();
         }
-=======
-
-//        Serial serial = new Serial();
-//        if (serial.iniciaSerial())
-//        {
-//            
-//        }
-//        serial.close();
-        /*Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-
-            }
-        };
-        timer.schedule(task, 0, 1000);*/
-
-        Controle controle = new Controle();
-        Temperatura temperatura = controle.pesquisarTemperatura();
-        valor = temperatura.getValorTemperatura();
->>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
 
         serial.close();
         return valor;

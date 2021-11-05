@@ -7,7 +7,6 @@ import DAL.TemperaturaDAO;
 //import DAL.PrecipitacaoDAO;
 import DAL.UmidadeDAO;
 import Modelo.Protocolo;
-import Modelo.Serial;
 import Modelo.Umidade;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +21,8 @@ public class Controle
     
     public void cadastrarTemperatura()
     {
-        Serial serial = new Serial();
-        serial.iniciaSerial();
         this.mensagem = "";
         Validacao validacao = new Validacao();
-        TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
         validacao.validarValorTemperatura(Integer.parseInt(Protocolo.temperatura));
         if (validacao.getMensagem().equals(""))
         {
@@ -40,21 +36,11 @@ public class Controle
         {
             this.mensagem = validacao.getMensagem();
         }
-<<<<<<< HEAD
-=======
-        serial.close();
-
->>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
     }
 
     public List<Temperatura> pesquisarTemperatura()
     {
         cadastrarTemperatura();
-<<<<<<< HEAD
-=======
-        Serial serial = new Serial();
-        serial.iniciaSerial();
->>>>>>> 52d10c6e4daec31dc3b34e1584e71ee4f624ba6e
         this.mensagem = "";
         Validacao validacao = new Validacao();
         Temperatura temperatura = new Temperatura();
