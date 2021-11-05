@@ -5,7 +5,6 @@
  */
 package Modelo;
 
-import Controle.Controle;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -20,19 +19,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Usuario
+ * @author Sandro
  */
 @Entity
 @Table(name = "temperatura")
 @XmlRootElement
-@NamedQueries(
-        {
-            @NamedQuery(name = "Temperatura.findAll", query = "SELECT t FROM Temperatura t")
-            , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
-            , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")
-        })
-public class Temperatura implements Serializable
-{
+@NamedQueries({
+    @NamedQuery(name = "Temperatura.findAll", query = "SELECT t FROM Temperatura t")
+    , @NamedQuery(name = "Temperatura.findByCodTemperatura", query = "SELECT t FROM Temperatura t WHERE t.codTemperatura = :codTemperatura")
+    , @NamedQuery(name = "Temperatura.findByValorTemperatura", query = "SELECT t FROM Temperatura t WHERE t.valorTemperatura = :valorTemperatura")})
+public class Temperatura implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -44,69 +40,57 @@ public class Temperatura implements Serializable
     @Column(name = "valor_temperatura")
     private int valorTemperatura;
 
-    public Temperatura()
-    {
+    public Temperatura() {
     }
 
-    public Temperatura(Integer codTemperatura)
-    {
+    public Temperatura(Integer codTemperatura) {
         this.codTemperatura = codTemperatura;
     }
 
-    public Temperatura(Integer codTemperatura, int valorTemperatura)
-    {
+    public Temperatura(Integer codTemperatura, int valorTemperatura) {
         this.codTemperatura = codTemperatura;
         this.valorTemperatura = valorTemperatura;
     }
 
-    public Integer getCodTemperatura()
-    {
+    public Integer getCodTemperatura() {
         return codTemperatura;
     }
 
-    public void setCodTemperatura(Integer codTemperatura)
-    {
+    public void setCodTemperatura(Integer codTemperatura) {
         this.codTemperatura = codTemperatura;
     }
 
-    public int getValorTemperatura()
-    {
+    public int getValorTemperatura() {
         return valorTemperatura;
     }
 
-    public void setValorTemperatura(int valorTemperatura)
-    {
+    public void setValorTemperatura(int valorTemperatura) {
         this.valorTemperatura = valorTemperatura;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 0;
         hash += (codTemperatura != null ? codTemperatura.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object)
-    {
+    public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Temperatura))
-        {
+        if (!(object instanceof Temperatura)) {
             return false;
         }
         Temperatura other = (Temperatura) object;
-        if ((this.codTemperatura == null && other.codTemperatura != null) || (this.codTemperatura != null && !this.codTemperatura.equals(other.codTemperatura)))
-        {
+        if ((this.codTemperatura == null && other.codTemperatura != null) || (this.codTemperatura != null && !this.codTemperatura.equals(other.codTemperatura))) {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString()
-    {
-        return "br.com.estacao.entidade.Temperatura[ codTemperatura=" + codTemperatura + " ]";
+    public String toString() {
+        return "Modelo.Temperatura[ codTemperatura=" + codTemperatura + " ]";
     }
-
+    
 }

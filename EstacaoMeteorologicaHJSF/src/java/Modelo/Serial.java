@@ -37,6 +37,7 @@ public class Serial implements SerialPortEventListener
                 if (currentPortId.getName().equals(serialPortName))
                 {
                     serialPort = (SerialPort) currentPortId.open(appName, TIME_OUT);
+                    portId = currentPortId;
                     break;
                 }
             }

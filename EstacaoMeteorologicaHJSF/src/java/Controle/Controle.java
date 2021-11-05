@@ -9,6 +9,7 @@ import DAL.UmidadeDAO;
 import Modelo.Protocolo;
 import Modelo.Serial;
 import Modelo.Umidade;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controle
@@ -18,6 +19,7 @@ public class Controle
 
     private String mensagem;
 
+    
     public void cadastrarTemperatura()
     {
         this.mensagem = "";
@@ -25,9 +27,9 @@ public class Controle
         validacao.validarValorTemperatura(Integer.parseInt(Protocolo.temperatura));
         if (validacao.getMensagem().equals(""))
         {
+            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
             Temperatura temperatura = new Temperatura();
             temperatura.setValorTemperatura(validacao.getValorTemperatura());
-            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
             temperaturaDAO.cadastrarTemperatura(temperatura);
             this.mensagem = temperaturaDAO.getMensagem();
         }
@@ -35,36 +37,30 @@ public class Controle
         {
             this.mensagem = validacao.getMensagem();
         }
-
     }
 
-    public Temperatura pesquisarTemperatura()
+    public List<Temperatura> pesquisarTemperatura()
     {
-        Serial serial = new Serial();
-        serial.iniciaSerial();
         cadastrarTemperatura();
-        
         this.mensagem = "";
         Validacao validacao = new Validacao();
-        TemperaturaDAO temperaturaDao = new TemperaturaDAO();
         Temperatura temperatura = new Temperatura();
-        validacao.validarCodTemperatura(temperatura.getCodTemperatura().toString());
         validacao.validarValorTemperatura(temperatura.getValorTemperatura());
+        List<Temperatura> listaTemperatura = new ArrayList<>();
 
         if (validacao.getMensagem().equals(""))
         {
-            temperatura.setCodTemperatura(validacao.getId());
+            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
+            //temperatura.setCodTemperatura(validacao.getId());
             temperatura.setValorTemperatura(validacao.getValorTemperatura());
-            temperatura = temperaturaDao.pesquisarTemperaturaPorId(temperatura);
-            this.mensagem = temperaturaDao.getMensagem();
+            listaTemperatura = temperaturaDAO.pesquisarTemperaturaPorId(temperatura);
+            this.mensagem = temperaturaDAO.getMensagem();
         }
         else
         {
             this.mensagem = validacao.getMensagem();
         }
-        
-        serial.close();
-        return temperatura;
+        return listaTemperatura;
     }
 
 //    public PrecipitacaoBean pesquisarPrecipitacaoPorId(String precipitacaoId)

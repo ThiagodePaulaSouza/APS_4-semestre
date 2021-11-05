@@ -7,7 +7,8 @@ package DAL;
 
 import Bean.TemperaturaBean;
 import Modelo.Temperatura;
-import DAL.Util.HibernateUtil;
+import java.util.ArrayList;
+import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -35,21 +36,24 @@ public class TemperaturaDAO
         }
     }
 
-    public Temperatura pesquisarTemperaturaPorId(Temperatura temperatura)
+    public List<Temperatura> pesquisarTemperaturaPorId(Temperatura temperatura)
     {
+        this.mensagem = "";
+        List<Temperatura> listaTemperatura = new ArrayList<>();
         try
         {
-            Query q = session.createQuery("from Temperatura t where t.cod_temperatura = :cod_temperatura");
-            q.setParameter("cod_temperatura", temperatura.getCodTemperatura());
-            temperatura = (Temperatura) q.list().get(0);
-            System.out.println("Deu certo !");
+            Query q = session.createQuery("from Temperatura t where t.valorTemperatura = :valorTemperatura");
+            //from temperatura t where t.valor_temperatura like :valor_temperatura
+                    
+            q.setParameter("valorTemperatura", temperatura.getValorTemperatura() + "%");
+            listaTemperatura = (List<Temperatura>) q.list();//.get(0)
         }
         catch (Exception e)
         {
             this.mensagem = "erro de leitura no BD";
             System.out.println(e);
         }
-        return temperatura;
+        return listaTemperatura;
     }
 
     public String getMensagem()
