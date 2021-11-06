@@ -35,10 +35,10 @@ public class TemperaturaBean {
         Serial serial = new Serial();
         serial.iniciaSerial();
         Controle controle = new Controle();
-        
+
         controle.cadastrarTemperatura();
         Temperatura valor = controle.pesquisarTemperatura(Estaticos.temperatura.getCodTemperatura());
-
+        
         serial.close();
         return valor.getValorTemperatura();
     }
