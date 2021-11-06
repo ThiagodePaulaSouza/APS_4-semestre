@@ -36,13 +36,13 @@ public class TemperaturaDAO
         }
     }
 
-    public List<Temperatura> pesquisarTemperaturaPorId(Temperatura temperatura)
+    public List<Temperatura> pesquisarTemperaturaPorValor(Temperatura temperatura)
     {
         this.mensagem = "";
         List<Temperatura> listaTemperatura = new ArrayList<>();
         try
         {
-            Query q = session.createQuery("from Temperatura t where t.valorTemperatura = :valorTemperatura");
+            Query q = session.createQuery("from Temperatura t where t.valorTemperatura like :valorTemperatura");
             //from temperatura t where t.valor_temperatura like :valor_temperatura
                     
             q.setParameter("valorTemperatura", temperatura.getValorTemperatura() + "%");

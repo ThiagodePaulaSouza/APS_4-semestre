@@ -4,6 +4,7 @@ import Controle.Controle;
 import Modelo.Estaticos;
 import Modelo.Serial;
 import Modelo.Temperatura;
+import Validacao.Validacao;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -36,8 +37,10 @@ public class TemperaturaBean {
         serial.iniciaSerial();
 
         Controle controle = new Controle();
+        controle.cadastrarTemperatura();
+        Validacao validacao = new Validacao();
         //FAZER TIMER!!! PARA CADA 1 OU 2 SEGUNDOS
-        List<Temperatura> listaTemperatura = controle.pesquisarTemperatura();
+        List<Temperatura> listaTemperatura = controle.pesquisarTemperatura(validacao.getValorTemperatura());
 
         if (listaTemperatura.size() == 0) {
             System.out.println("Não existe registros de temperatura");
@@ -51,7 +54,7 @@ public class TemperaturaBean {
             valor = Estaticos.temperatura.getValorTemperatura();
         }
 
-        serial.close();
+        //serial.close();
         return valor;
     }
 

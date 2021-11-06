@@ -11,54 +11,37 @@ import Modelo.Umidade;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Controle
-{
+public class Controle {
 
     private Controle controle;
 
     private String mensagem;
 
-    
-    public void cadastrarTemperatura()
-    {
+    public void cadastrarTemperatura() {
         this.mensagem = "";
         Validacao validacao = new Validacao();
-        validacao.validarValorTemperatura(Integer.parseInt(Protocolo.temperatura));
-        if (validacao.getMensagem().equals(""))
-        {
+        validacao.validarValorTemperatura(Protocolo.temperatura);
+        if (validacao.getMensagem().equals("")) {
             TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
             Temperatura temperatura = new Temperatura();
             temperatura.setValorTemperatura(validacao.getValorTemperatura());
             temperaturaDAO.cadastrarTemperatura(temperatura);
             this.mensagem = temperaturaDAO.getMensagem();
-        }
-        else
-        {
+        } else {
             this.mensagem = validacao.getMensagem();
         }
     }
 
-    public List<Temperatura> pesquisarTemperatura()
-    {
-        cadastrarTemperatura();
+    public List<Temperatura> pesquisarTemperatura(Integer valor) {
         this.mensagem = "";
-        Validacao validacao = new Validacao();
         Temperatura temperatura = new Temperatura();
-        validacao.validarValorTemperatura(temperatura.getValorTemperatura());
         List<Temperatura> listaTemperatura = new ArrayList<>();
 
-        if (validacao.getMensagem().equals(""))
-        {
-            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
-            //temperatura.setCodTemperatura(validacao.getId());
-            temperatura.setValorTemperatura(validacao.getValorTemperatura());
-            listaTemperatura = temperaturaDAO.pesquisarTemperaturaPorId(temperatura);
-            this.mensagem = temperaturaDAO.getMensagem();
-        }
-        else
-        {
-            this.mensagem = validacao.getMensagem();
-        }
+        temperatura.setValorTemperatura(valor);
+
+        TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
+        listaTemperatura = temperaturaDAO.pesquisarTemperaturaPorValor(temperatura);
+        this.mensagem = temperaturaDAO.getMensagem();
         return listaTemperatura;
     }
 
@@ -81,43 +64,35 @@ public class Controle
 //        }
 //        return precipitacao;
 //    }
-    public Umidade pesquisarUmidadePorId(String umidadeId)
-    {
+    public Umidade pesquisarUmidadePorId(String umidadeId) {
         this.mensagem = "";
         Validacao validacao = new Validacao();
         validacao.validarIdUmidade(umidadeId);
         Umidade umidade = new Umidade();
-        if (validacao.getMensagem().equals(""))
-        {
+        if (validacao.getMensagem().equals("")) {
             umidade.setCodUmidade(validacao.getId());
             UmidadeDAO umidadeDAO = new UmidadeDAO();
             umidade = umidadeDAO.pesquisarUmidadePorId(umidade);
             this.mensagem = umidadeDAO.getMensagem();
-        }
-        else
-        {
+        } else {
             this.mensagem = validacao.getMensagem();
         }
         return umidade;
     }
 
-    public String getMensagem()
-    {
+    public String getMensagem() {
         return mensagem;
     }
 
-    public void setMensagem(String mensagem)
-    {
+    public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
 
-    public Controle getControle()
-    {
+    public Controle getControle() {
         return controle;
     }
 
-    public void setControle(Controle controle)
-    {
+    public void setControle(Controle controle) {
         this.controle = controle;
     }
 
