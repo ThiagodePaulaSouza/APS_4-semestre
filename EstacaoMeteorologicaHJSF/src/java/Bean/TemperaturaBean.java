@@ -37,10 +37,11 @@ public class TemperaturaBean {
         Controle controle = new Controle();
         //FAZER TIMER PARA ATUALIZAR EM REALTIME
         controle.cadastrarTemperatura();
-        Temperatura valor = controle.pesquisarTemperatura(Estaticos.temperatura.getCodTemperatura());
+        Temperatura temperatura = controle.pesquisarTemperaturaPorId(Estaticos.temperatura.getCodTemperatura());
         
         serial.close();
-        return valor.getValorTemperatura();
+        return temperatura.getValorTemperatura();
+        
     }
 
     public void setValor(int valor) {

@@ -1,5 +1,9 @@
 package Bean;
 
+import Controle.Controle;
+import Modelo.Estaticos;
+import Modelo.Precipitacao;
+import Modelo.Serial;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.view.ViewScoped;
@@ -28,7 +32,15 @@ public class PrecipitacaoBean
 
     public int getValor()
     {
-        return valor;
+        Serial serial = new Serial();
+        serial.iniciaSerial();
+        Controle controle = new Controle();
+        //FAZER TIMER PARA ATUALIZAR EM REALTIME
+        controle.cadastrarPrecipitacao();
+        Precipitacao precipitacao = controle.pesquisarPrecipitacaoPorId(Estaticos.precipitacao.getCodPrecipitacao());
+        
+        serial.close();
+        return precipitacao.getValorPrecipitacao();
     }
 
     public void setValor(int valor)

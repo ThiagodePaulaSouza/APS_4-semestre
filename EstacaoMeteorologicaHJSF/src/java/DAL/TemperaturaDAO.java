@@ -27,12 +27,11 @@ public class TemperaturaDAO
             session.save(temperatura);
             session.getTransaction().commit();
             session.close();
-            this.mensagem = "Temperatura Cadastrada Com Sucesso!!!";
+            this.mensagem = "Temperatura Cadastrada Com Sucesso!";
         }
         catch (Exception e)
         {
             this.mensagem = "Erro de Gravação no BD";
-            System.out.println(e);
         }
     }
 
@@ -48,7 +47,6 @@ public class TemperaturaDAO
         catch (Exception e)
         {
             this.mensagem = "erro de leitura no BD";
-            System.out.println(e);
         }
         return temperatura;
     }

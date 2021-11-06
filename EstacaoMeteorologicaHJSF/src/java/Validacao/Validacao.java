@@ -1,83 +1,48 @@
 package Validacao;
 
-/**
- *
- * @author MatheusVinícius
- */
-import java.util.List;
-
 public class Validacao
 {
 
     private String mensagem;
     private Integer codTemperatura;
+    private Integer codUmidade;
+    private Integer codPrecipitacao;
     private Integer valorTemperatura;
+    private Double valorUmidade;
+    private Integer valorPrecipitacao;
 
-   
-
-    public void validarDadosUmidade(List<String> dadosUmidade)
+    public void validarCodTemperatura(Integer codTemperatura)
     {
-        this.mensagem = "";
-        this.validarCodUmidade(dadosUmidade.get(0));
-        this.validarValorUmidade((dadosUmidade.get(1)));
-
-    }
-
-    public void validarDadosPrecipitacao(List<String> dadosPrecipitacao)
-    {
-        this.mensagem = "";
-        this.validarCodPrecipitacao(dadosPrecipitacao.get(0));
-        this.validarValorPrecipitacao(dadosPrecipitacao.get(1));
-    }
-
-    public void validarCodTemperatura(Integer numeroId){
         this.mensagem = "";
         try
         {
-            this.codTemperatura = numeroId;
+            this.codTemperatura = codTemperatura;
         }
         catch (Exception e)
         {
-            this.mensagem += "ID inválido \n";
-        }
-    }
-    
-    public void validarValorTemperatura(String valorTemperatura)
-    {
-        this.mensagem = "";
-        try
-        {
-            if (!valorTemperatura.equals(""))
-            {
-                this.valorTemperatura = Integer.parseInt(valorTemperatura);
-            }
-        }
-        catch (Exception e)
-        {
-            this.mensagem = "Valor de Temperatura Inválido";
-            System.out.println(e);
+            this.mensagem += "Codigo inválido \n";
         }
     }
 
-    public void validarIdUmidade(String umidadeId)
+    public void validarCodUmidade(Integer codUmidade)
     {
         this.mensagem = "";
         try
         {
-            this.codTemperatura = Integer.parseInt(umidadeId); //ID
+            this.codUmidade = codUmidade;
         }
         catch (Exception e)
         {
-            this.mensagem += "ID inválido \n";
+            this.mensagem += "Codigo inválido \n";
         }
     }
 
-    public void validarCodUmidade(String codigoUmidadeId)
+    public void validarCodPrecipitacao(Integer codPrecipitacao)
     {
         this.mensagem = "";
         try
         {
-            this.codTemperatura = Integer.parseInt(codigoUmidadeId); //Código Umidade
+            this.codPrecipitacao = codPrecipitacao;
         }
         catch (Exception e)
         {
@@ -87,51 +52,41 @@ public class Validacao
 
     public void validarValorUmidade(String valorUmidade)
     {
-        if (valorUmidade.length() < 3 || valorUmidade.length() > 16)
+        this.mensagem = "";
+        try
         {
-            this.mensagem += "O Valor da Umidade deve ter de 3 a 16 digitos \n";
+            this.valorUmidade = Double.parseDouble(valorUmidade);
+
         }
-        else
+        catch (Exception e)
         {
-            this.mensagem = "";
+            this.mensagem = "Valor de Umidade Inválido";
         }
     }
 
-    public void validarIdPrecipitacao(String precipitacaoId)
+    public void validarValorTemperatura(String valorTemperatura)
     {
         this.mensagem = "";
         try
         {
-            this.codTemperatura = Integer.parseInt(precipitacaoId); //ID
+            this.valorTemperatura = Integer.parseInt(valorTemperatura);
         }
         catch (Exception e)
         {
-            this.mensagem += "ID inválido \n";
-        }
-    }
-
-    public void validarCodPrecipitacao(String codigoPrecipitacaoId)
-    {
-        this.mensagem = "";
-        try
-        {
-            this.codTemperatura = Integer.parseInt(codigoPrecipitacaoId); //Código Umidade
-        }
-        catch (Exception e)
-        {
-            this.mensagem += "Codigo inválido \n";
+            this.mensagem = "Valor de Temperatura Inválido";
         }
     }
 
     public void validarValorPrecipitacao(String valorPrecipitacao)
     {
-        if (valorPrecipitacao.length() < 3 || valorPrecipitacao.length() > 11)
+        this.mensagem = "";
+        try
         {
-            this.mensagem += "O Valor da Precipitacao deve ter de 3 a 11 digitos \n";
+            this.valorPrecipitacao = Integer.parseInt(valorPrecipitacao);
         }
-        else
+        catch (Exception e)
         {
-            this.mensagem = "";
+            this.mensagem = "Valor de Precipitacao Inválido";
         }
     }
 
@@ -150,11 +105,53 @@ public class Validacao
         this.valorTemperatura = valorTemperatura;
     }
 
-    public Integer getCodTemperatura() {
+    public Integer getCodTemperatura()
+    {
         return codTemperatura;
     }
 
-    public void setCodTemperatura(Integer codTemperatura) {
+    public void setCodTemperatura(Integer codTemperatura)
+    {
         this.codTemperatura = codTemperatura;
+    }
+
+    public Integer getCodUmidade()
+    {
+        return codUmidade;
+    }
+
+    public void setCodUmidade(Integer codUmidade)
+    {
+        this.codUmidade = codUmidade;
+    }
+
+    public Integer getCodPrecipitacao()
+    {
+        return codPrecipitacao;
+    }
+
+    public void setCodPrecipitacao(Integer codPrecipitacao)
+    {
+        this.codPrecipitacao = codPrecipitacao;
+    }
+
+    public Double getValorUmidade()
+    {
+        return valorUmidade;
+    }
+
+    public void setValorUmidade(Double valorUmidade)
+    {
+        this.valorUmidade = valorUmidade;
+    }
+
+    public Integer getValorPrecipitacao()
+    {
+        return valorPrecipitacao;
+    }
+
+    public void setValorPrecipitacao(Integer valorPrecipitacao)
+    {
+        this.valorPrecipitacao = valorPrecipitacao;
     }
 }

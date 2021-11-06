@@ -1,6 +1,8 @@
 package Bean;
 
 import Controle.Controle;
+import Modelo.Estaticos;
+import Modelo.Serial;
 import Modelo.Umidade;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -17,7 +19,7 @@ public class UmidadeBean
 {
 
     private Integer cod;
-    private int valor;
+    private double valor;
 
     public Integer getCod()
     {
@@ -29,17 +31,24 @@ public class UmidadeBean
         this.cod = cod;
     }
 
-    public int getValor()
+    public double getValor()
     {
+        Serial serial = new Serial();
+        serial.iniciaSerial();
+        Controle controle = new Controle();
+        //FAZER TIMER PARA ATUALIZAR EM REALTIME
+        controle.cadastrarUmidade();
+        Umidade umidade = controle.pesquisarUmidadePorId(Estaticos.umidade.getCodUmidade());
         
-        return valor;
+        serial.close();
+        return umidade.getValorUmidade();
     }
 
-    public void setValor(int valor)
+    public void setValor(double valor)
     {
-        
         this.valor = valor;
     }
+    
 
     public UmidadeBean()
     {
