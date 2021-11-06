@@ -10,14 +10,10 @@ public class Validacao
 {
 
     private String mensagem;
-    private Integer id;
+    private Integer codTemperatura;
     private Integer valorTemperatura;
 
-    public void validarDadosTemperatura(List<String> dadosTemperatura)
-    {
-        this.mensagem = "";                                                         //Codigo da Temperatura
-//        this.validarValorTemperatura(dadosTemperatura.get(1));                             //Validar Valor da Temperatura
-    }
+   
 
     public void validarDadosUmidade(List<String> dadosUmidade)
     {
@@ -38,7 +34,7 @@ public class Validacao
         this.mensagem = "";
         try
         {
-            this.id = numeroId;
+            this.codTemperatura = numeroId;
         }
         catch (Exception e)
         {
@@ -68,7 +64,7 @@ public class Validacao
         this.mensagem = "";
         try
         {
-            this.id = Integer.parseInt(umidadeId); //ID
+            this.codTemperatura = Integer.parseInt(umidadeId); //ID
         }
         catch (Exception e)
         {
@@ -81,7 +77,7 @@ public class Validacao
         this.mensagem = "";
         try
         {
-            this.id = Integer.parseInt(codigoUmidadeId); //Código Umidade
+            this.codTemperatura = Integer.parseInt(codigoUmidadeId); //Código Umidade
         }
         catch (Exception e)
         {
@@ -106,7 +102,7 @@ public class Validacao
         this.mensagem = "";
         try
         {
-            this.id = Integer.parseInt(precipitacaoId); //ID
+            this.codTemperatura = Integer.parseInt(precipitacaoId); //ID
         }
         catch (Exception e)
         {
@@ -119,7 +115,7 @@ public class Validacao
         this.mensagem = "";
         try
         {
-            this.id = Integer.parseInt(codigoPrecipitacaoId); //Código Umidade
+            this.codTemperatura = Integer.parseInt(codigoPrecipitacaoId); //Código Umidade
         }
         catch (Exception e)
         {
@@ -144,11 +140,6 @@ public class Validacao
         return mensagem;
     }
 
-    public Integer getId()
-    {
-        return id;
-    }
-
     public Integer getValorTemperatura()
     {
         return valorTemperatura;
@@ -157,5 +148,13 @@ public class Validacao
     public void setValorTemperatura(Integer valorTemperatura)
     {
         this.valorTemperatura = valorTemperatura;
+    }
+
+    public Integer getCodTemperatura() {
+        return codTemperatura;
+    }
+
+    public void setCodTemperatura(Integer codTemperatura) {
+        this.codTemperatura = codTemperatura;
     }
 }

@@ -36,24 +36,21 @@ public class TemperaturaDAO
         }
     }
 
-    public List<Temperatura> pesquisarTemperaturaPorValor(Temperatura temperatura)
+    public Temperatura pesquisarTemperaturaPorId(Temperatura temperatura)
     {
         this.mensagem = "";
-        List<Temperatura> listaTemperatura = new ArrayList<>();
         try
         {
-            Query q = session.createQuery("from Temperatura t where t.valorTemperatura like :valorTemperatura");
-            //from temperatura t where t.valor_temperatura like :valor_temperatura
-                    
-            q.setParameter("valorTemperatura", temperatura.getValorTemperatura() + "%");
-            listaTemperatura = (List<Temperatura>) q.list();//.get(0)
+            Query q = session.createQuery("from Temperatura t where t.codTemperatura = :codTemperatura");
+            q.setParameter("codTemperatura", temperatura.getCodTemperatura());
+            temperatura = (Temperatura) q.list().get(0);
         }
         catch (Exception e)
         {
             this.mensagem = "erro de leitura no BD";
             System.out.println(e);
         }
-        return listaTemperatura;
+        return temperatura;
     }
 
     public String getMensagem()

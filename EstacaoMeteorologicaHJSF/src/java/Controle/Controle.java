@@ -6,6 +6,7 @@ import Modelo.Temperatura;
 import DAL.TemperaturaDAO;
 //import DAL.PrecipitacaoDAO;
 import DAL.UmidadeDAO;
+import Modelo.Estaticos;
 import Modelo.Protocolo;
 import Modelo.Umidade;
 import java.util.ArrayList;
@@ -23,26 +24,28 @@ public class Controle {
         validacao.validarValorTemperatura(Protocolo.temperatura);
         if (validacao.getMensagem().equals("")) {
             TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
-            Temperatura temperatura = new Temperatura();
-            temperatura.setValorTemperatura(validacao.getValorTemperatura());
-            temperaturaDAO.cadastrarTemperatura(temperatura);
+            Estaticos.temperatura.setValorTemperatura(validacao.getValorTemperatura());
+            temperaturaDAO.cadastrarTemperatura(Estaticos.temperatura);
             this.mensagem = temperaturaDAO.getMensagem();
         } else {
             this.mensagem = validacao.getMensagem();
         }
     }
 
-    public List<Temperatura> pesquisarTemperatura(Integer valor) {
+    public Temperatura pesquisarTemperatura(Integer numeroId) {
         this.mensagem = "";
+        Validacao validacao = new Validacao();
+        validacao.validarCodTemperatura(numeroId);
         Temperatura temperatura = new Temperatura();
-        List<Temperatura> listaTemperatura = new ArrayList<>();
-
-        temperatura.setValorTemperatura(valor);
+        if (validacao.getMensagem().equals("")) {
+            
+        }
+        temperatura.setCodTemperatura(validacao.getCodTemperatura());
 
         TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
-        listaTemperatura = temperaturaDAO.pesquisarTemperaturaPorValor(temperatura);
+        temperatura = temperaturaDAO.pesquisarTemperaturaPorId(temperatura);
         this.mensagem = temperaturaDAO.getMensagem();
-        return listaTemperatura;
+        return temperatura;
     }
 
 //    public PrecipitacaoBean pesquisarPrecipitacaoPorId(String precipitacaoId)
@@ -70,7 +73,7 @@ public class Controle {
         validacao.validarIdUmidade(umidadeId);
         Umidade umidade = new Umidade();
         if (validacao.getMensagem().equals("")) {
-            umidade.setCodUmidade(validacao.getId());
+            //umidade.setCodUmidade(validacao.getId());
             UmidadeDAO umidadeDAO = new UmidadeDAO();
             umidade = umidadeDAO.pesquisarUmidadePorId(umidade);
             this.mensagem = umidadeDAO.getMensagem();
