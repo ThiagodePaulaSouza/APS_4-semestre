@@ -77,7 +77,7 @@ public class Serial implements SerialPortEventListener
         }
     }
         
-    public synchronized void closed()
+    public synchronized void close()
     {
         serialPort.removeEventListener();
         serialPort.close();
@@ -179,11 +179,6 @@ public class Serial implements SerialPortEventListener
     public void setSerialPortName(String serialPortName)
     {
         this.serialPortName = serialPortName;
-    }
-
-    public void close()
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
