@@ -15,40 +15,37 @@ import javax.faces.view.ViewScoped;
 @ManagedBean
 @RequestScoped
 @ViewScoped
-public class PrecipitacaoBean
-{
+public class PrecipitacaoBean {
+
     private Integer cod;
     private int valor;
 
-    public Integer getCod()
-    {
+    public Integer getCod() {
         return cod;
     }
 
-    public void setCod(Integer cod)
-    {
+    public void setCod(Integer cod) {
         this.cod = cod;
     }
 
-    public int getValor()
-    {
+    public int getValor() {
         Serial serial = new Serial();
         serial.iniciaSerial();
+
         Controle controle = new Controle();
-        //FAZER TIMER PARA ATUALIZAR EM REALTIME
         controle.cadastrarPrecipitacao();
         Precipitacao precipitacao = controle.pesquisarPrecipitacaoPorId(Estaticos.precipitacao.getCodPrecipitacao());
-        
+        valor = precipitacao.getValorPrecipitacao();
+
         serial.close();
-        return precipitacao.getValorPrecipitacao();
+        return valor;
     }
 
-    public void setValor(int valor)
-    {
+    public void setValor(int valor) {
         this.valor = valor;
     }
-    public PrecipitacaoBean()
-    {
+
+    public PrecipitacaoBean() {
     }
-    
+
 }
