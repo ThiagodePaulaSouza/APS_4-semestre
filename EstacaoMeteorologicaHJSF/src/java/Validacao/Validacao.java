@@ -46,14 +46,14 @@ public class Validacao
         }
     }
     
-    public void validarValorTemperatura(Integer valorTemperatura)
+    public void validarValorTemperatura(String valorTemperatura)
     {
         this.mensagem = "";
         try
         {
             if (!valorTemperatura.equals(""))
             {
-                this.valorTemperatura = valorTemperatura;
+                this.valorTemperatura = Integer.parseInt(valorTemperatura);
             }
         }
         catch (Exception e)
