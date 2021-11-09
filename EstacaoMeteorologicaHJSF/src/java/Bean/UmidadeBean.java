@@ -36,12 +36,13 @@ public class UmidadeBean
         Serial serial = new Serial();
         serial.iniciaSerial();
         Controle controle = new Controle();
-        //FAZER TIMER PARA ATUALIZAR EM REALTIME
+        
         controle.cadastrarUmidade();
-        Umidade umidade = controle.pesquisarUmidadePorId(Estaticos.umidade.getCodUmidade());
+        Umidade umidade = controle.pesquisarUmidadePorId(1);//Estaticos.umidade.getCodUmidade()
+        valor = umidade.getValorUmidade();
         
         serial.close();
-        return umidade.getValorUmidade();
+        return valor;
     }
 
     public void setValor(double valor)

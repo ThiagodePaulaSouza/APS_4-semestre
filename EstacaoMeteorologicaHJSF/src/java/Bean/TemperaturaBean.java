@@ -4,9 +4,6 @@ import Controle.Controle;
 import Modelo.Estaticos;
 import Modelo.Serial;
 import Modelo.Temperatura;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.view.ViewScoped;
@@ -18,37 +15,44 @@ import javax.faces.view.ViewScoped;
 @ManagedBean
 @RequestScoped
 @ViewScoped
-public class TemperaturaBean {
+public class TemperaturaBean
+{
 
     private Integer cod;
     private int valor;
 
-    public Integer getCod() {
+    public Integer getCod()
+    {
         return cod;
     }
 
-    public void setCod(Integer cod) {
+    public void setCod(Integer cod)
+    {
         this.cod = cod;
     }
 
-    public int getValor() {
+    public int getValor()
+    {
         Serial serial = new Serial();
         serial.iniciaSerial();
         Controle controle = new Controle();
-        //FAZER TIMER PARA ATUALIZAR EM REALTIME
+        
         controle.cadastrarTemperatura();
-        Temperatura temperatura = controle.pesquisarTemperaturaPorId(Estaticos.temperatura.getCodTemperatura());
-        
+        Temperatura temperatura = controle.pesquisarTemperaturaPorId(1);//Estaticos.temperatura.getCodTemperatura()
+        valor = temperatura.getValorTemperatura();
+
         serial.close();
-        return temperatura.getValorTemperatura();
-        
+        return valor;
+
     }
 
-    public void setValor(int valor) {
+    public void setValor(int valor)
+    {
         this.valor = valor;
     }
 
-    public TemperaturaBean() {
+    public TemperaturaBean()
+    {
     }
 
 }
