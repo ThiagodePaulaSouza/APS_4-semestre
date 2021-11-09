@@ -38,7 +38,7 @@ public class TemperaturaBean
         Controle controle = new Controle();
         
         controle.cadastrarTemperatura();
-        Temperatura temperatura = controle.pesquisarTemperaturaPorId(1);//Estaticos.temperatura.getCodTemperatura()
+        Temperatura temperatura = controle.pesquisarTemperaturaPorId(Estaticos.temperatura.getCodTemperatura());
         valor = temperatura.getValorTemperatura();
 
         serial.close();

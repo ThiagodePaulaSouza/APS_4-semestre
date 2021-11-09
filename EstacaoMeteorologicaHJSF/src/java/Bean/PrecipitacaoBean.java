@@ -38,7 +38,7 @@ public class PrecipitacaoBean
         Controle controle = new Controle();
         
         controle.cadastrarPrecipitacao();
-        Precipitacao precipitacao = controle.pesquisarPrecipitacaoPorId(1);//Estaticos.precipitacao.getCodPrecipitacao()
+        Precipitacao precipitacao = controle.pesquisarPrecipitacaoPorId(Estaticos.precipitacao.getCodPrecipitacao());
         valor = precipitacao.getValorPrecipitacao();
 
         serial.close();

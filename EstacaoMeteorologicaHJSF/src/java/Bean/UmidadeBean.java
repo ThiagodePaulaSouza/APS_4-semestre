@@ -38,7 +38,7 @@ public class UmidadeBean
         Controle controle = new Controle();
         
         controle.cadastrarUmidade();
-        Umidade umidade = controle.pesquisarUmidadePorId(1);//Estaticos.umidade.getCodUmidade()
+        Umidade umidade = controle.pesquisarUmidadePorId(Estaticos.umidade.getCodUmidade());
         valor = umidade.getValorUmidade();
         
         serial.close();
