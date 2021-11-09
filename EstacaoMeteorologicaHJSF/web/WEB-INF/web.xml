@@ -18,7 +18,12 @@
             30
         </session-timeout>
     </session-config>
+    <!-- pagina selecionada para aparecer como pagina de apresentação -->
     <welcome-file-list>
-        <welcome-file>index.xhtml</welcome-file>
+        <welcome-file>services.xhtml</welcome-file>
     </welcome-file-list>
+    <context-param>
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>
 </web-app>
