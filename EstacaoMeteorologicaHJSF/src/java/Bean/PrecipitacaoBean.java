@@ -25,15 +25,9 @@ public class PrecipitacaoBean
 //        Serial serial = new Serial();
 //        serial.iniciaSerial();
         Controle controle = new Controle();
-<<<<<<< HEAD
 //        controle.cadastrarPrecipitacao();
         Precipitacao precipitacao = controle.pesquisarPrecipitacaoPorId(1);//Estaticos.precipitacao.getCodPrecipitacao()
 //        serial.close();
-=======
-        
-        controle.cadastrarPrecipitacao();
-        Precipitacao precipitacao = controle.pesquisarPrecipitacaoPorId(Estaticos.precipitacao.getCodPrecipitacao());
->>>>>>> c68b959754739abf2a6b9c8174396fcf577b16bc
         valor = precipitacao.getValorPrecipitacao();
         List<Number> intervals = new ArrayList<Number>()
         {

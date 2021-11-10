@@ -28,15 +28,9 @@ public class TemperaturaBean
 //        Serial serial = new Serial();
 //        serial.iniciaSerial();
         Controle controle = new Controle();
-<<<<<<< HEAD
 //        controle.cadastrarTemperatura();
         Temperatura temperatura = controle.pesquisarTemperaturaPorId(1);//Estaticos.temperatura.getCodTemperatura()
 //        serial.close();
-=======
-        
-        controle.cadastrarTemperatura();
-        Temperatura temperatura = controle.pesquisarTemperaturaPorId(Estaticos.temperatura.getCodTemperatura());
->>>>>>> c68b959754739abf2a6b9c8174396fcf577b16bc
         valor = temperatura.getValorTemperatura();
         List<Number> intervals = new ArrayList<Number>()
         {
