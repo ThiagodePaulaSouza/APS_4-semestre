@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Estação Meteorológica</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> 
+        <link href="templatemo_550_diagoona/css/bootstrap.css" rel="stylesheet" />
+        <link href="templatemo_550_diagoona/fontawesome/css/all.min.css" rel="stylesheet" /> 
+        <link href="templatemo_550_diagoona/css/teste.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <div class="tm-container">        
+            <div>
+                <div class="tm-row pt-4">
+                    <div class="tm-col-left">
+                        <div class="icone">
+                            <img src="templatemo_550_diagoona/img/icone_1.png"></img>
+                        </div>
+                        <div class="texto">
+                            <h1 class="tm-sitename text-uppercase">Estação Meteorológica</h1>     
+                        </div>
+                    </div>
+                    <div class="tm-col-right">
+                        <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                            <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                                    data-toggle="collapse" data-target="#navbar-nav" 
+                                    aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span><i class="fas fa-bars"></i></span>
+                            </button>                        
+
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="tm-row">
+                    <div class="tm-col-left"></div>
+                    <main class="tm-col-right">
+                        <section class="tm-content">
+                            <!--<p:outputLabel class="mb-5 tm-content-title">#{umidadeBean.valor}</p:outputLabel><br/>-->
+                            <!--<p:outputLabel class="mb-5 tm-content-title">#{temperaturaBean.valor}</p:outputLabel><br/>-->
+                            <!--<p:outputLabel class="mb-5 tm-content-title">#{precipitacaoBean.valor}</p:outputLabel><br/>-->
+                            <div class="media my-3 mb-5 tm-service-media tm-service-media-img-l">
+                                <img src="templatemo_550_diagoona/img/services-1.jpg" alt="Image" class="tm-service-img"/>
+                                <div class="media-body tm-service-text">
+                                    <h2 class="mb-4 tm-content-title">Umidade</h2>
+                                    <p>Umidade é relativo a quantidade de vapor d'água presente em determinado espaço, ou seja, quando há água em forma de vapor no ar. </p>
+                                </div> 
+                            </div>    
+
+                            <div class="media my-3 mb-5 tm-service-media"> 
+
+                                <div class="media-body tm-service-text">
+                                    <h2 class="mb-4 tm-content-title">Temperatura</h2>
+                                    <p>Temperatura é a grandeza física que mede o grau de agitação térmica, ou energia cinética, translacional, rotacional e vibracional dos átomos e moléculas que constituem um corpo.</p>
+                                </div> 
+                                <img src="templatemo_550_diagoona/img/services-2.jpg" alt="Image" class="tm-service-img-r"/>
+                            </div>
+
+                            <div class="media my-3 mb-5 tm-service-media">
+                                <img src="templatemo_550_diagoona/img/services-3.jpg" alt="Image" class="tm-service-img"/>
+                                <div class="media-body tm-service-text">
+                                    <h2 class="mb-4 tm-content-title">Precipitação</h2>
+                                    <p>Entende-se por precipitação a água proveniente do vapor de água da atmosfera depositada na superfície terrestre sob qualquer forma: chuva, granizo, neblina, neve, orvalho ou geada.</p>
+                                </div>
+                            </div>
+
+                        </section>
+                    </main>
+                </div>
+            </div>  
+
+            <div class="tm-row">
+                <div class="tm-col-left text-center">            
+                    <ul class="tm-bg-controls-wrapper">
+                        <li class="tm-bg-control active" data-id="0"></li>
+                        <li class="tm-bg-control" data-id="1"></li>
+                        <li class="tm-bg-control" data-id="2"></li>
+                    </ul>            
+                </div>  
+
+                <div class="tm-col-right tm-col-footer">
+                    <footer class="tm-site-footer text-right">
+
+                    </footer>
+                </div>  
+            </div>        
+            <!-- Diagonal background design -->
+            <div class="tm-bg">
+                <div class="tm-bg-left"></div>
+                <div class="tm-bg-right"></div>
+            </div>
+            <div class="botao">
+                <button type="button" class="btn btn-info" onclick="window.location.href = 'templatemo_550_diagoona/estacaoMeteorologica.xhtml'">Prosseguir...</button>
+            </div>
+        </div>
+
+    </h:body>
+    <script src="templatemo_550_diagoona/js/jquery-3.4.1.min.js"></script>
+    <script src="templatemo_550_diagoona/js/bootstrap.min.js"></script>
+    <script src="templatemo_550_diagoona/js/jquery.backstretch.min.js"></script>
+    <script src="templatemo_550_diagoona/js/template.js"></script>
+    <style>
+        .botao{
+            position: absolute;
+            left:570px;
+            top:520px;
+        }
+        .icone{
+            position: absolute;
+            top:5px;
+        }
+        .texto{
+            position:absolute;
+            left:130px;
+            top:25px;
+        }
+    </style>
+</html>
+
