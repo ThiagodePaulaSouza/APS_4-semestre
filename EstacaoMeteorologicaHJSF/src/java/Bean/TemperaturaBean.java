@@ -4,6 +4,9 @@ import Controle.Controle;
 import Modelo.Estaticos;
 import Modelo.Serial;
 import Modelo.Temperatura;
+import java.util.ArrayList;
+import java.util.List;
+import org.primefaces.model.chart.MeterGaugeChartModel;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.view.ViewScoped;
@@ -17,42 +20,37 @@ import javax.faces.view.ViewScoped;
 @ViewScoped
 public class TemperaturaBean
 {
-
-    private Integer cod;
     private int valor;
-
-    public Integer getCod()
-    {
-        return cod;
-    }
-
-    public void setCod(Integer cod)
-    {
-        this.cod = cod;
-    }
-
-    public int getValor()
-    {
-        Serial serial = new Serial();
-        serial.iniciaSerial();
-        Controle controle = new Controle();
-        
-        controle.cadastrarTemperatura();
-        Temperatura temperatura = controle.pesquisarTemperaturaPorId(1);//Estaticos.temperatura.getCodTemperatura()
-        valor = temperatura.getValorTemperatura();
-
-        serial.close();
-        return valor;
-
-    }
-
-    public void setValor(int valor)
-    {
-        this.valor = valor;
-    }
+    private final MeterGaugeChartModel model;
 
     public TemperaturaBean()
     {
+//        Serial serial = new Serial();
+//        serial.iniciaSerial();
+        Controle controle = new Controle();
+//        controle.cadastrarTemperatura();
+        Temperatura temperatura = controle.pesquisarTemperaturaPorId(1);//Estaticos.temperatura.getCodTemperatura()
+//        serial.close();
+        valor = temperatura.getValorTemperatura();
+        List<Number> intervals = new ArrayList<Number>()
+        {
+            {
+                add(15);
+                add(30);
+                add(45);
+                add(60);
+            }
+        };
+        model = new MeterGaugeChartModel(valor, intervals);
+        model.setTitle("Temperatura");
+        model.setSeriesColors("66cc66,93b75f,E7E658,cc6666");
+        model.setShowTickLabels(true);
+        model.setLabelHeightAdjust(100);
+        model.setIntervalOuterRadius(130);
     }
-
+    
+    public MeterGaugeChartModel getModel()
+    {
+        return model;
+    }
 }

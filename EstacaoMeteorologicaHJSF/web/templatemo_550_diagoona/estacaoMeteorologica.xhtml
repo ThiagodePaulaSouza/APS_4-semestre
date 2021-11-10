@@ -26,14 +26,21 @@
             left:40px;
             top:150px;
             width:500px;
-            height: 300px;
+            height:300px;
         }
         .Umidade{
             display:inline-block;
             left:40px;
             top:150px;
             width:500px;
-            height: 300px;
+            height:300px;
+        }
+        .precipitacao{
+            display:inline-block;
+            left:40px;
+            top:150px;
+            width:500px;
+            height:300px;
         }
     </style>
     <h:body>   
@@ -43,16 +50,9 @@
         <div class="texto">
             <h1 class="tm-sitename text-uppercase">Estação Meteorológica</h1>       
         </div>
-        
-        <!--problema: Cannot convert 69 of type class java.lang.Double to class org.primefaces.model.chart.ChartModel-->
-        <!--<p:chart class="umidade" type="metergauge" model="#{umidadeBean.valor}" />-->
-        <!--problema: Cannot convert 27 of type class java.lang.Integer to class org.primefaces.model.chart.ChartModel-->        
-        <!--<p:chart class="temperatura" type="metergauge" model="#{temperaturaBean.valor}" />-->
-        
-        <!--problema: Cannot convert 1000 of type class java.lang.Integer to class org.primefaces.model.chart.ChartModel-->
-        <!--<p:chart class="precipitacao" type="metergauge" model="#{precipitacaoBean.valor}" />-->
-        
-        
+        <p:chart class="umidade" type="metergauge" model="#{umidadeBean.model}" />
+        <p:chart class="temperatura" type="metergauge" model="#{temperaturaBean.model}" />
+        <p:chart class="precipitacao" type="metergauge" model="#{precipitacaoBean.model}" />
     </h:body>
 </html>
 
