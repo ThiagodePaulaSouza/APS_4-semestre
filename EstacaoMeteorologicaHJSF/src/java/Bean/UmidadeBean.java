@@ -29,9 +29,15 @@ public class UmidadeBean
 //        Serial serial = new Serial();
 //        serial.iniciaSerial();
         Controle controle = new Controle();
+<<<<<<< HEAD
 //        controle.cadastrarUmidade();
         Umidade umidade = controle.pesquisarUmidadePorId(1);//Estaticos.umidade.getCodUmidade()
 //        serial.close();
+=======
+        
+        controle.cadastrarUmidade();
+        Umidade umidade = controle.pesquisarUmidadePorId(Estaticos.umidade.getCodUmidade());
+>>>>>>> c68b959754739abf2a6b9c8174396fcf577b16bc
         valor = umidade.getValorUmidade();
         
         List<Number> intervals = new ArrayList<Number>()
