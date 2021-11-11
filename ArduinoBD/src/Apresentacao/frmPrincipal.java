@@ -183,7 +183,7 @@ public class frmPrincipal extends javax.swing.JDialog
         Controle controle = new Controle();
         Umidade umidade = new Umidade();
         Temperatura temperatura = new Temperatura();
-        Precipitacao precipitacao = new Precipitacao();                
+        Precipitacao precipitacao = new Precipitacao();
         Timer timer = new Timer();
         TimerTask task = new TimerTask()
         {
@@ -198,9 +198,9 @@ public class frmPrincipal extends javax.swing.JDialog
                 lblTemperaturaTempoReal.setText(Protocolo.temperatura + "ºC");
                 lblPrecipitacaoTempoReal.setText(Protocolo.precipitacao);
 
-                lblUmidadeBD.setText(String.valueOf(umidade.getValorUmidade() + "%"));
-                lblTemperaturaBD.setText(String.valueOf(temperatura.getValorTemperatura() + "ºC"));
-                lblPrecipitacaoBD.setText(String.valueOf(precipitacao.getValorPrecipitacao()));
+                lblUmidadeBD.setText(String.valueOf(Estaticos.umidade.getValorUmidade() + "%"));
+                lblTemperaturaBD.setText(String.valueOf(Estaticos.temperatura.getValorTemperatura() + "ºC"));
+                lblPrecipitacaoBD.setText(String.valueOf(Estaticos.precipitacao.getValorPrecipitacao()));
 
             }
         };
