@@ -24,8 +24,9 @@ public class Controle
         if (validacao.getMensagem().equals(""))
         {
             PrecipitacaoDAO precipitacaoDAO = new PrecipitacaoDAO();
-            Estaticos.precipitacao.setValorPrecipitacao(validacao.getValorPrecipitacao());
-            precipitacaoDAO.cadastrarPrecipitacao(Estaticos.precipitacao);
+            Precipitacao precipitacao = new Precipitacao();
+            precipitacao.setValorPrecipitacao(validacao.getValorPrecipitacao());
+            precipitacaoDAO.cadastrarPrecipitacao(precipitacao);
             mensagem = precipitacaoDAO.getMensagem();
         }
         else
@@ -42,8 +43,9 @@ public class Controle
         if (validacao.getMensagem().equals(""))
         {
             TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
-            Estaticos.temperatura.setValorTemperatura(validacao.getValorTemperatura());
-            temperaturaDAO.cadastrarTemperatura(Estaticos.temperatura);
+            Temperatura temperatura = new Temperatura();
+            temperatura.setValorTemperatura(validacao.getValorTemperatura());
+            temperaturaDAO.cadastrarTemperatura(temperatura);
             mensagem = temperaturaDAO.getMensagem();
         }
         else
@@ -60,8 +62,9 @@ public class Controle
         if (validacao.getMensagem().equals(""))
         {
             UmidadeDAO umidadeDAO = new UmidadeDAO();
-            Estaticos.umidade.setValorUmidade(validacao.getValorUmidade());
-            umidadeDAO.cadastrarUmidade(Estaticos.umidade);
+            Umidade umidade = new Umidade();
+            umidade.setValorUmidade(validacao.getValorUmidade());
+            umidadeDAO.cadastrarUmidade(umidade);
             mensagem = umidadeDAO.getMensagem();
         }
         else
