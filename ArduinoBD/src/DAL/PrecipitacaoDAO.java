@@ -1,10 +1,6 @@
 package DAL;
 
-/**
- *
- * @author Usuario
- */
-import Modelo.Precipitacao;
+import modelo.Precipitacao;
 import org.hibernate.Query;
 import org.hibernate.Session;
 

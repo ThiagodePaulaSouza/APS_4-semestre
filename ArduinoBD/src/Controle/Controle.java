@@ -1,15 +1,14 @@
 package Controle;
 
 import Validacao.Validacao;
-import Modelo.Temperatura;
-import Bean.PrecipitacaoBean;
+import modelo.Temperatura;
 import DAL.TemperaturaDAO;
 import DAL.PrecipitacaoDAO;
 import DAL.UmidadeDAO;
-import Modelo.Estaticos;
-import Modelo.Precipitacao;
-import Modelo.Protocolo;
-import Modelo.Umidade;
+import modelo.Estaticos;
+import modelo.Precipitacao;
+import modelo.Protocolo;
+import modelo.Umidade;
 import java.util.ArrayList;
 import java.util.List;
 

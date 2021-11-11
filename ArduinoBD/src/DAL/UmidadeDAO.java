@@ -1,10 +1,6 @@
 package DAL;
 
-/**
- *
- * @author Usuario
- */
-import Modelo.Umidade;
+import modelo.Umidade;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
