@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/Apresentacao/frmPrincipal.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/DAL/PrecipitacaoDAO.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/DAL/UmidadeDAO.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/modelo/Protocolo.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/Controle/Controle.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/modelo/Precipitacao.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/modelo/Estaticos.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/modelo/Serial.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/arduinobd/ArduinoBD.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/modelo/Temperatura.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/DAL/HibernateUtil.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/Validacao/Validacao.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/DAL/TemperaturaDAO.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/modelo/Umidade.java</file>
-            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/ArduinoBD/src/hibernate.cfg.xml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
