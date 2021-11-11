@@ -12,11 +12,6 @@ public class ArduinoBD
             
             frmPrincipal frmp = new frmPrincipal(null, true);
             frmp.setVisible(true);
-            
-            Controle controle = new Controle();
-            controle.cadastrarPrecipitacao();
-            controle.cadastrarTemperatura();
-            controle.cadastrarUmidade();
         }
         serial.close();
         System.exit(0);

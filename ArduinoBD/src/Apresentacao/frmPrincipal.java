@@ -5,6 +5,7 @@
  */
 package Apresentacao;
 
+import Controle.Controle;
 import modelo.Protocolo;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -176,26 +177,30 @@ public class frmPrincipal extends javax.swing.JDialog
 
     private void formWindowOpened(java.awt.event.WindowEvent evt)//GEN-FIRST:event_formWindowOpened
     {//GEN-HEADEREND:event_formWindowOpened
+        Controle controle = new Controle();
         Timer timer = new Timer();
         TimerTask task = new TimerTask()
         {
             @Override
             public void run()
             {
+                controle.cadastrarPrecipitacao();
+                controle.cadastrarTemperatura();
+                controle.cadastrarUmidade();
+
                 lblUmidadeTempoReal.setText(Protocolo.umidade + "%");
                 lblTemperaturaTempoReal.setText(Protocolo.temperatura + "ºC");
                 lblPrecipitacaoTempoReal.setText(Protocolo.precipitacao);
-                
+
                 lblUmidadeBD.setText(String.valueOf(Estaticos.umidade.getValorUmidade() + "%"));
-                lblTemperaturaBD.setText(String.valueOf(Estaticos.temperatura.getValorTemperatura()+ "ºC"));
+                lblTemperaturaBD.setText(String.valueOf(Estaticos.temperatura.getValorTemperatura() + "ºC"));
                 lblPrecipitacaoBD.setText(String.valueOf(Estaticos.precipitacao.getValorPrecipitacao()));
-                
+
             }
-        }; timer.schedule(task, 0, 1000);
-        
-        
-        
-        
+        };
+        timer.schedule(task, 0, 1000);
+
+
     }//GEN-LAST:event_formWindowOpened
 
     /**
