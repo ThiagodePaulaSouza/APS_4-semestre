@@ -1,14 +1,11 @@
 package Controle;
 
 import Validacao.Validacao;
-import modelo.Temperatura;
 import DAL.TemperaturaDAO;
 import DAL.PrecipitacaoDAO;
 import DAL.UmidadeDAO;
 import modelo.Estaticos;
-import modelo.Precipitacao;
 import modelo.Protocolo;
-import modelo.Umidade;
 
 public class Controle
 {

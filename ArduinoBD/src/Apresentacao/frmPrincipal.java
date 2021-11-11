@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Apresentacao;
 
 import Controle.Controle;
@@ -10,20 +5,8 @@ import modelo.Protocolo;
 import java.util.Timer;
 import java.util.TimerTask;
 import modelo.Estaticos;
-import modelo.Precipitacao;
-import modelo.Temperatura;
-import modelo.Umidade;
-
-/**
- *
- * @author Rever
- */
 public class frmPrincipal extends javax.swing.JDialog
 {
-
-    /**
-     * Creates new form frmPrincipal
-     */
     public frmPrincipal(java.awt.Frame parent, boolean modal)
     {
         super(parent, modal);
@@ -181,9 +164,6 @@ public class frmPrincipal extends javax.swing.JDialog
     private void formWindowOpened(java.awt.event.WindowEvent evt)//GEN-FIRST:event_formWindowOpened
     {//GEN-HEADEREND:event_formWindowOpened
         Controle controle = new Controle();
-        Umidade umidade = new Umidade();
-        Temperatura temperatura = new Temperatura();
-        Precipitacao precipitacao = new Precipitacao();
         Timer timer = new Timer();
         TimerTask task = new TimerTask()
         {
@@ -205,8 +185,6 @@ public class frmPrincipal extends javax.swing.JDialog
             }
         };
         timer.schedule(task, 0, 1000);
-
-
     }//GEN-LAST:event_formWindowOpened
 
     /**

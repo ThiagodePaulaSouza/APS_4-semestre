@@ -1,7 +1,6 @@
 package arduinobd;
 
 import Apresentacao.frmPrincipal;
-import Controle.Controle;
 import modelo.Serial;
 
 public class ArduinoBD
