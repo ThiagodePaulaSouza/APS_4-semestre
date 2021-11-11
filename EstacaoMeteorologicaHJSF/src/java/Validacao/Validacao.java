@@ -7,9 +7,6 @@ public class Validacao
     private Integer codTemperatura;
     private Integer codUmidade;
     private Integer codPrecipitacao;
-    private Integer valorTemperatura;
-    private Double valorUmidade;
-    private Integer valorPrecipitacao;
 
     public void validarCodTemperatura(Integer codTemperatura)
     {
@@ -50,59 +47,9 @@ public class Validacao
         }
     }
 
-    public void validarValorUmidade(String valorUmidade)
-    {
-        this.mensagem = "";
-        try
-        {
-            this.valorUmidade = Double.parseDouble(valorUmidade);
-
-        }
-        catch (Exception e)
-        {
-            this.mensagem = "Valor de Umidade Inválido";
-        }
-    }
-
-    public void validarValorTemperatura(String valorTemperatura)
-    {
-        this.mensagem = "";
-        try
-        {
-            this.valorTemperatura = Integer.parseInt(valorTemperatura);
-        }
-        catch (Exception e)
-        {
-            this.mensagem = "Valor de Temperatura Inválido";
-        }
-    }
-
-    public void validarValorPrecipitacao(String valorPrecipitacao)
-    {
-        this.mensagem = "";
-        try
-        {
-            this.valorPrecipitacao = Integer.parseInt(valorPrecipitacao);
-        }
-        catch (Exception e)
-        {
-            this.mensagem = "Valor de Precipitacao Inválido";
-        }
-    }
-
     public String getMensagem()
     {
         return mensagem;
-    }
-
-    public Integer getValorTemperatura()
-    {
-        return valorTemperatura;
-    }
-
-    public void setValorTemperatura(Integer valorTemperatura)
-    {
-        this.valorTemperatura = valorTemperatura;
     }
 
     public Integer getCodTemperatura()
@@ -133,25 +80,5 @@ public class Validacao
     public void setCodPrecipitacao(Integer codPrecipitacao)
     {
         this.codPrecipitacao = codPrecipitacao;
-    }
-
-    public Double getValorUmidade()
-    {
-        return valorUmidade;
-    }
-
-    public void setValorUmidade(Double valorUmidade)
-    {
-        this.valorUmidade = valorUmidade;
-    }
-
-    public Integer getValorPrecipitacao()
-    {
-        return valorPrecipitacao;
-    }
-
-    public void setValorPrecipitacao(Integer valorPrecipitacao)
-    {
-        this.valorPrecipitacao = valorPrecipitacao;
     }
 }

@@ -1,43 +1,21 @@
 package DAL;
 
-/**
- *
- * @author Usuario
- */
 import Modelo.Precipitacao;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class PrecipitacaoDAO
 {
-
+    private Precipitacao precipitacao;
     private String mensagem;
     private Session session = HibernateUtil.getSessionFactory().openSession();
 
-    public void cadastrarPrecipitacao(Precipitacao precipitacao)
+    public Precipitacao pesquisarPrecipitacaoPorId()
     {
         this.mensagem = "";
         try
         {
-            session.beginTransaction();
-            session.save(precipitacao);
-            session.getTransaction().commit();
-            session.close();
-            this.mensagem = "Temperatura Cadastrada Com Sucesso!";
-        }
-        catch (Exception e)
-        {
-            this.mensagem = "Erro de Gravação no BD";
-        }
-    }
-    
-    public Precipitacao pesquisarPrecipitacaoPorId(Precipitacao precipitacao)
-    {
-        this.mensagem = "";
-        try
-        {
-            Query q = session.createQuery("from Precipitacao t where t.codPrecipitacao = :codPrecipitacao");
-            q.setParameter("codPrecipitacao", precipitacao.getCodPrecipitacao());
+            Query q = session.createQuery("SELECT LAST_INSERT_ID(cod_precipitacao) from Precipitacao order by cod_precipitacao desc limit 1");
             precipitacao = (Precipitacao) q.list().get(0);
         }
         catch (Exception e)
