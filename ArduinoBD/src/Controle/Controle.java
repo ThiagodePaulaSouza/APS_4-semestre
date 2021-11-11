@@ -72,67 +72,6 @@ public class Controle
         }
     }
 
-    public Temperatura pesquisarTemperaturaPorId(Integer codTemperatura)
-    {
-        this.mensagem = "";
-        Validacao validacao = new Validacao();
-        validacao.validarCodTemperatura(codTemperatura);
-        Temperatura temperatura = new Temperatura();
-        if (validacao.getMensagem().equals(""))
-        {
-            temperatura.setCodTemperatura(validacao.getCodTemperatura());
-            TemperaturaDAO temperaturaDAO = new TemperaturaDAO();
-            temperatura = temperaturaDAO.pesquisarTemperaturaPorId(temperatura);
-            this.mensagem = temperaturaDAO.getMensagem();
-        }
-        else
-        {
-            this.mensagem = validacao.getMensagem();
-        }
-
-        return temperatura;
-    }
-
-    public Precipitacao pesquisarPrecipitacaoPorId(Integer codPrecipitacao)
-    {
-        this.mensagem = "";
-        Validacao validacao = new Validacao();
-        validacao.validarCodPrecipitacao(codPrecipitacao);
-        Precipitacao precipitacao = new Precipitacao();
-        if (validacao.getMensagem().equals(""))
-        {
-            precipitacao.setCodPrecipitacao(validacao.getCodPrecipitacao());
-            PrecipitacaoDAO precipitacaoDAO = new PrecipitacaoDAO();
-            precipitacao = precipitacaoDAO.pesquisarPrecipitacaoPorId(precipitacao);
-            this.mensagem = precipitacaoDAO.getMensagem();
-        }
-        else
-        {
-            this.mensagem = validacao.getMensagem();
-        }
-        return precipitacao;
-    }
-
-    public Umidade pesquisarUmidadePorId(Integer codUmidade)
-    {
-        this.mensagem = "";
-        Validacao validacao = new Validacao();
-        validacao.validarCodUmidade(codUmidade);
-        Umidade umidade = new Umidade();
-        if (validacao.getMensagem().equals(""))
-        {
-            umidade.setCodUmidade(validacao.getCodUmidade());
-            UmidadeDAO umidadeDAO = new UmidadeDAO();
-            umidade = umidadeDAO.pesquisarUmidadePorId(umidade);
-            this.mensagem = umidadeDAO.getMensagem();
-        }
-        else
-        {
-            this.mensagem = validacao.getMensagem();
-        }
-        return umidade;
-    }
-
     public String getMensagem()
     {
         return mensagem;

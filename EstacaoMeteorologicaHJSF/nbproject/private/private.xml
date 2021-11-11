@@ -3,10 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS/APS_4-semestre-c68b959754739abf2a6b9c8174396fcf577b16bc/EstacaoMeteorologicaHJSF/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS/APS_4-semestre-c68b959754739abf2a6b9c8174396fcf577b16bc/EstacaoMeteorologicaHJSF/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS/APS_4-semestre-c68b959754739abf2a6b9c8174396fcf577b16bc/EstacaoMeteorologicaHJSF/web/WEB-INF/faces-config.xml</file>
-            <file>file:/C:/Users/Sandro/Documents/NetBeansProjects/APS/APS_4-semestre-c68b959754739abf2a6b9c8174396fcf577b16bc/EstacaoMeteorologicaHJSF/src/java/Bean/PrecipitacaoBean.java</file>
+            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Bean/UmidadeBean.java</file>
+            <file>file:/E:/New%20Stuff/Faculdade/PROGRAMAS/JAVA/APS_4-semestre/EstacaoMeteorologicaHJSF/src/java/Bean/TemperaturaBean.java</file>
         </group>
     </open-files>
 </project-private>
