@@ -1,0 +1,20 @@
+create database estacao;
+use estacao;
+create table umidade 
+(
+    cod_umidade INT(6) unsigned AUTO_INCREMENT PRIMARY KEY,
+
+    valor_umidade double not null
+);
+create table temperatura 
+(
+    cod_temperatura INT(6) unsigned AUTO_INCREMENT PRIMARY KEY,
+
+    valor_temperatura int not null
+);
+create table precipitacao 
+(
+    cod_precipitacao INT(6) unsigned AUTO_INCREMENT PRIMARY KEY,
+
+    valor_precipitacao int not null
+);

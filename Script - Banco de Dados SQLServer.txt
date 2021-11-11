@@ -1,0 +1,20 @@
+create database estacao
+use estacao
+create table umidade 
+(
+    cod_umidade INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+
+    valor_umidade float(53) not null
+)
+create table temperatura 
+(
+    cod_temperatura INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+
+    valor_temperatura int not null
+)
+create table precipitacao 
+(
+    cod_precipitacao INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+
+    valor_precipitacao int not null
+)
