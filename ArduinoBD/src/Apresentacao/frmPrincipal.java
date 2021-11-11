@@ -8,6 +8,7 @@ package Apresentacao;
 import modelo.Protocolo;
 import java.util.Timer;
 import java.util.TimerTask;
+import modelo.Estaticos;
 
 /**
  *
@@ -37,16 +38,27 @@ public class frmPrincipal extends javax.swing.JDialog
 
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        lblumid = new javax.swing.JLabel();
-        lblUmidade = new javax.swing.JLabel();
-        lblTemp = new javax.swing.JLabel();
-        lblTemperatura = new javax.swing.JLabel();
-        lblPrec = new javax.swing.JLabel();
-        lblPrecipitacao = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblumidTempoReal = new javax.swing.JLabel();
+        lblUmidadeTempoReal = new javax.swing.JLabel();
+        lblTempTempoReal = new javax.swing.JLabel();
+        lblTemperaturaTempoReal = new javax.swing.JLabel();
+        lblPrecTempoReal = new javax.swing.JLabel();
+        lblPrecipitacaoTempoReal = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lblUmidBD = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblUmidadeBD = new javax.swing.JLabel();
+        lblTempBD = new javax.swing.JLabel();
+        lblTemperaturaBD = new javax.swing.JLabel();
+        lblPrecBD = new javax.swing.JLabel();
+        lblPrecipitacaoBD = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
         jLabel7.setText("jLabel7");
+
+        jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter()
@@ -57,20 +69,41 @@ public class frmPrincipal extends javax.swing.JDialog
             }
         });
 
-        lblumid.setText("Umidade");
+        lblumidTempoReal.setText("Umidade");
 
-        lblUmidade.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lblUmidade.setText("Umidade");
+        lblUmidadeTempoReal.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblUmidadeTempoReal.setText("Umidade");
 
-        lblTemp.setText("Temperatura");
+        lblTempTempoReal.setText("Temperatura");
 
-        lblTemperatura.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lblTemperatura.setText("Temperatura");
+        lblTemperaturaTempoReal.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblTemperaturaTempoReal.setText("Temperatura");
 
-        lblPrec.setText("Precipitação");
+        lblPrecTempoReal.setText("Precipitação");
 
-        lblPrecipitacao.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lblPrecipitacao.setText("Precipitação");
+        lblPrecipitacaoTempoReal.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblPrecipitacaoTempoReal.setText("Precipitação");
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setText("Tempo Real");
+
+        lblUmidBD.setText("Umidade");
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel3.setText("Banco de Dados");
+
+        lblUmidadeBD.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblUmidadeBD.setText("Umidade");
+
+        lblTempBD.setText("Temperatura");
+
+        lblTemperaturaBD.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblTemperaturaBD.setText("Temperatura");
+
+        lblPrecBD.setText("Precipitação");
+
+        lblPrecipitacaoBD.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblPrecipitacaoBD.setText("Precipitação");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,29 +112,62 @@ public class frmPrincipal extends javax.swing.JDialog
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblumid)
-                    .addComponent(lblUmidade)
-                    .addComponent(lblTemp)
-                    .addComponent(lblTemperatura)
-                    .addComponent(lblPrec)
-                    .addComponent(lblPrecipitacao))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(57, 57, 57))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPrecTempoReal)
+                            .addComponent(lblTemperaturaTempoReal)
+                            .addComponent(lblTempTempoReal)
+                            .addComponent(lblUmidadeTempoReal)
+                            .addComponent(lblumidTempoReal)
+                            .addComponent(lblPrecipitacaoTempoReal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblUmidBD)
+                            .addComponent(lblPrecipitacaoBD)
+                            .addComponent(lblPrecBD)
+                            .addComponent(lblTemperaturaBD)
+                            .addComponent(lblTempBD)
+                            .addComponent(lblUmidadeBD))
+                        .addGap(40, 40, 40))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblumid)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblUmidade)
-                .addGap(56, 56, 56)
-                .addComponent(lblTemp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTemperatura)
-                .addGap(59, 59, 59)
-                .addComponent(lblPrec)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblPrecipitacao)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblumidTempoReal)
+                    .addComponent(lblUmidBD))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblUmidadeTempoReal)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblTempTempoReal)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblTemperaturaTempoReal)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPrecTempoReal)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPrecipitacaoTempoReal))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblUmidadeBD)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblTempBD)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblTemperaturaBD)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPrecBD)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPrecipitacaoBD)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -116,9 +182,13 @@ public class frmPrincipal extends javax.swing.JDialog
             @Override
             public void run()
             {
-                lblUmidade.setText(Protocolo.umidade + "%");
-                lblTemperatura.setText(Protocolo.temperatura + "ºC");
-                lblPrecipitacao.setText(Protocolo.precipitacao);
+                lblUmidadeTempoReal.setText(Protocolo.umidade + "%");
+                lblTemperaturaTempoReal.setText(Protocolo.temperatura + "ºC");
+                lblPrecipitacaoTempoReal.setText(Protocolo.precipitacao);
+                
+                lblUmidadeBD.setText(String.valueOf(Estaticos.umidade.getValorUmidade() + "%"));
+                lblTemperaturaBD.setText(String.valueOf(Estaticos.temperatura.getValorTemperatura()+ "ºC"));
+                lblPrecipitacaoBD.setText(String.valueOf(Estaticos.precipitacao.getValorPrecipitacao()));
                 
             }
         }; timer.schedule(task, 0, 1000);
@@ -188,13 +258,22 @@ public class frmPrincipal extends javax.swing.JDialog
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel lblPrec;
-    private javax.swing.JLabel lblPrecipitacao;
-    private javax.swing.JLabel lblTemp;
-    private javax.swing.JLabel lblTemperatura;
-    private javax.swing.JLabel lblUmidade;
-    private javax.swing.JLabel lblumid;
+    private javax.swing.JLabel lblPrecBD;
+    private javax.swing.JLabel lblPrecTempoReal;
+    private javax.swing.JLabel lblPrecipitacaoBD;
+    private javax.swing.JLabel lblPrecipitacaoTempoReal;
+    private javax.swing.JLabel lblTempBD;
+    private javax.swing.JLabel lblTempTempoReal;
+    private javax.swing.JLabel lblTemperaturaBD;
+    private javax.swing.JLabel lblTemperaturaTempoReal;
+    private javax.swing.JLabel lblUmidBD;
+    private javax.swing.JLabel lblUmidadeBD;
+    private javax.swing.JLabel lblUmidadeTempoReal;
+    private javax.swing.JLabel lblumidTempoReal;
     // End of variables declaration//GEN-END:variables
 }
