@@ -15,13 +15,16 @@ import javax.faces.view.ViewScoped;
 public class PrecipitacaoBean
 {
     private int valor;
+    private String mensagem;
+    
     private final MeterGaugeChartModel model;
 
     public PrecipitacaoBean()
     {
         Controle controle = new Controle();
         Precipitacao precipitacao = controle.pesquisarPrecipitacao();
-        valor = precipitacao.getValorPrecipitacao();
+        this.mensagem = controle.getMensagem();
+        this.valor = precipitacao.getValorPrecipitacao();
         List<Number> intervals = new ArrayList<Number>()
         {
             {
@@ -31,7 +34,7 @@ public class PrecipitacaoBean
                 add(1500);
             }
         };
-        model = new MeterGaugeChartModel(valor, intervals);
+        model = new MeterGaugeChartModel(this.valor, intervals);
         model.setTitle("Precipitação");
         model.setSeriesColors("66cc66,93b75f,E7E658,cc6666");
         model.setShowTickLabels(true);
@@ -42,5 +45,14 @@ public class PrecipitacaoBean
     public MeterGaugeChartModel getModel()
     {
         return model;
+    }
+    public double getValor()
+    {
+        return valor;
+    }
+
+    public String getMensagem()
+    {
+        return mensagem;
     }
 }

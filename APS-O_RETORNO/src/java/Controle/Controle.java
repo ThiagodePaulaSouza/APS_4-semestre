@@ -1,6 +1,5 @@
 package Controle;
 
-import Validacao.Validacao;
 import Modelo.Temperatura;
 import DAL.TemperaturaDAO;
 import DAL.PrecipitacaoDAO;
@@ -47,11 +46,6 @@ public class Controle
     public String getMensagem()
     {
         return mensagem;
-    }
-
-    public void setMensagem(String mensagem)
-    {
-        this.mensagem = mensagem;
     }
 
     public Controle getControle()

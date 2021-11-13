@@ -15,13 +15,16 @@ import javax.faces.view.ViewScoped;
 public class UmidadeBean
 {
     private double valor;
+    private String mensagem;
+
     private final MeterGaugeChartModel model;
 
     public UmidadeBean()
     {
         Controle controle = new Controle();
         Umidade umidade = controle.pesquisarUmidade();
-        valor = umidade.getValorUmidade();
+        this.mensagem = controle.getMensagem();
+        this.valor = umidade.getValorUmidade();
         List<Number> intervals = new ArrayList<Number>()
         {
             {
@@ -31,7 +34,7 @@ public class UmidadeBean
                 add(100);
             }
         };
-        model = new MeterGaugeChartModel(valor, intervals);
+        model = new MeterGaugeChartModel(this.valor, intervals);
         model.setTitle("Umidade");
         model.setSeriesColors("66cc66,93b75f,E7E658,cc6666");
         model.setShowTickLabels(true);
@@ -42,5 +45,15 @@ public class UmidadeBean
     public MeterGaugeChartModel getModel()
     {
         return model;
+    }
+    
+    public double getValor()
+    {
+        return valor;
+    }
+
+    public String getMensagem()
+    {
+        return mensagem;
     }
 }

@@ -15,13 +15,16 @@ import javax.faces.view.ViewScoped;
 public class TemperaturaBean
 {
     private int valor;
+    private String mensagem;
+    
     private final MeterGaugeChartModel model;
 
     public TemperaturaBean()
     {
         Controle controle = new Controle();
         Temperatura temperatura = controle.pesquisarTemperatura();
-        valor = temperatura.getValorTemperatura();
+        this.mensagem = controle.getMensagem();
+        this.valor = temperatura.getValorTemperatura();
         List<Number> intervals = new ArrayList<Number>()
         {
             {
@@ -31,7 +34,7 @@ public class TemperaturaBean
                 add(60);
             }
         };
-        model = new MeterGaugeChartModel(valor, intervals);
+        model = new MeterGaugeChartModel(this.valor, intervals);
         model.setTitle("Temperatura");
         model.setSeriesColors("66cc66,93b75f,E7E658,cc6666");
         model.setShowTickLabels(true);
@@ -43,4 +46,14 @@ public class TemperaturaBean
     {
         return model;
     }
+    public double getValor()
+    {
+        return valor;
+    }
+
+    public String getMensagem()
+    {
+        return mensagem;
+    }
+    
 }
