@@ -1,60 +1,65 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(45deg, #1e1e28, #32323c);
-  overflow: hidden;
-}
-
-canvas {
-  position: absolute;
-  z-index: 2;
-  width: 100vw;
-  height: 100vh;
-}
-
-svg {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.cloud {
-  transform: translate(0, 0);
-  animation-name: cloudSlide;
-  animation-duration: 10s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-delay: 0s;
-  animation-fill-mode: both;
-  animation-timing-function: linear;
-}
-
-@keyframes cloudSlide {
-  from {
-    transform: translate(0px, 0px);
-  }
-  to {
-    transform: translate(30px, 0px);
-  }
-}
-@media (max-width: 750px) {
-  svg {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    width: 100%;
-    height: auto;
+html,body {
+    width: 17000px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-  }
+}
+.container{
+    width : 1900px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/*# sourceMappingURL=main.css.map */
+.icone{
+    position: absolute;
+    top:5px;
+    left:40px;
+}
+.texto{
+    position:absolute;
+    left:130px;
+    top:20px;
+    font-size: 1.8rem;
+    
+}
+.temperatura{
+    margin:  5px 2px;
+    border-radius: 35px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.5);
+    position:absolute;
+    display:inline-block;
+    left:900px;
+    top:150px;
+    width:410px;
+    height:300px;
+}
+.Umidade{
+    margin:  5px 2px;
+    border-radius: 35px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.5);
+    position:absolute;
+    display:inline-block;
+    left:470px;
+    top:150px;
+    width:410px;
+    height:300px;
+}
+.precipitacao{
+    margin:  5px 2px;
+    border-radius: 35px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.5);
+    position:absolute;
+    display:inline-block;
+    left:40px;
+    top:150px;
+    width:410px;
+    height:300px;
+}

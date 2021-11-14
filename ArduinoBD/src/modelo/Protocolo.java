@@ -28,6 +28,4 @@ public class Protocolo
         this.leituraComando = leituraComando;
         interpretaComando();
     }
-    
-    
 }

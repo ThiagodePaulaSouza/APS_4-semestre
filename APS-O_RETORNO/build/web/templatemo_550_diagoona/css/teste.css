@@ -342,3 +342,17 @@ textarea {
     .tm-service-img-r { margin-left: 0; }
     .tm-service-img-p { margin-left:0;  }
 }
+.botao{
+            position: absolute;
+            left:570px;
+            top:520px;
+        }
+        .icone{
+            position: absolute;
+            top:5px;
+        }
+        .texto{
+            position:absolute;
+            left:130px;
+            top:25px;
+        }

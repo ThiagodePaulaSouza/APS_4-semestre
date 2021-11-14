@@ -20,8 +20,7 @@ public class frmPrincipal extends javax.swing.JDialog
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -48,10 +47,9 @@ public class frmPrincipal extends javax.swing.JDialog
         jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter()
-        {
-            public void windowOpened(java.awt.event.WindowEvent evt)
-            {
+        setTitle("Estação Arduino");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
@@ -159,6 +157,7 @@ public class frmPrincipal extends javax.swing.JDialog
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt)//GEN-FIRST:event_formWindowOpened
