@@ -1,4 +1,3 @@
-
 const initBg = (autoplay = true) => {
     const bgImgsNames = ['tela_1.jpg', 'tela_2.jpg', 'tela_4.jpg'];
     const bgImgs = bgImgsNames.map(img => "templatemo_550_diagoona/img/" + img);

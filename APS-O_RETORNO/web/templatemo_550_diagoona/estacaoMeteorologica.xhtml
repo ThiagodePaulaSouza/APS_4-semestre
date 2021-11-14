@@ -7,58 +7,37 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <meta http-equiv="refresh" content="5"/>
         <title>Estação Meteorológica</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> 
-        <link href="css/bootstrap.css" rel="stylesheet"/>    
+        <link href="css/bootstrap.css" rel="stylesheet" /> 
+        <link href="css/background_chuvinha.css" rel="stylesheet"/>
     </h:head>
     <style>
-        .icone{
-            position: absolute;
-            top:5px;
-            left:20px;
-        }
-        .texto{
+        #botao{
             position:absolute;
-            left:130px;
-            top:25px;
-        }
-        .temperatura{
-            position:absolute;
-            display:inline-block;
-            left:870px;
-            top:150px;
-            width:420px;
-            height:300px;
-        }
-        .Umidade{
-            position:absolute;
-            display:inline-block;
-            left:450px;
-            top:150px;
-            width:420px;
-            height:300px;
-        }
-        .precipitacao{
-            position:absolute;
-            display:inline-block;
+            top:530px;
             left:40px;
-            top:150px;
-            width:420px;
-            height:300px;
         }
+
     </style>
-    <h:body>   
-        <canvas id="c"></canvas>
+    <h:body> 
+        <!-- Background-->
+   <div id="jsi-rain-container" class="container"></div>
+   <!-- Icone --> 
         <div class="icone">
             <img src="img/icone_1.png"></img>
         </div>
         <div class="texto">
-            <h1 class="tm-sitename text-uppercase">Estação Meteorológica</h1>       
+            <h1 class="tm-sitename text-uppercase text-white">Estação Meteorológica</h1>       
         </div>
+   <!-- Graficos do Chart do Primefaces -->
         <p:chart class="umidade" type="metergauge" model="#{umidadeBean.model}" />
+         
         <p:chart class="temperatura" type="metergauge" model="#{temperaturaBean.model}" />
-        <p:chart class="precipitacao" type="metergauge" model="#{precipitacaoBean.model}" />
+        <p:chart class="precipitacao" type="metergauge" model="#{precipitacaoBean.model}" />|
+    <div class="botao">
+                <button type="button" class="btn btn-outline-light" id="botao" onclick="window.location.href = 'C:\APS-O_RETORNO\web/services.xhtml'">Retornar...</button>
+            </div>
     </h:body>
     <script src="js/background_chuvinha.js"></script>
 </html>
