@@ -5,12 +5,47 @@ import modelo.Protocolo;
 import java.util.Timer;
 import java.util.TimerTask;
 import modelo.Estaticos;
-public class frmPrincipal extends javax.swing.JDialog
-{
-    public frmPrincipal(java.awt.Frame parent, boolean modal)
-    {
+
+public class frmPrincipal extends javax.swing.JDialog {
+
+    Timer timer1 = new Timer();
+    Timer timer2 = new Timer();
+    Controle controle = new Controle();
+
+    public frmPrincipal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+
+    private void TempoReal() {
+        int delay = 0;
+        int intervalos = 1000;
+        timer1.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                lblUmidadeTempoReal.setText(Protocolo.umidade + "%");
+                lblTemperaturaTempoReal.setText(Protocolo.temperatura + "ºC");
+                lblPrecipitacaoTempoReal.setText(Protocolo.precipitacao);
+            }
+        }, delay, intervalos);
+
+    }
+
+    private void TempoCadastroBD() {
+        int delay = 0;
+        int intervalos = 60000;
+        timer2.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                controle.cadastrarPrecipitacao();
+                controle.cadastrarTemperatura();
+                controle.cadastrarUmidade();
+
+                lblUmidadeBD.setText(String.valueOf(Estaticos.umidade.getValorUmidade() + "%"));
+                lblTemperaturaBD.setText(String.valueOf(Estaticos.temperatura.getValorTemperatura() + "ºC"));
+                lblPrecipitacaoBD.setText(String.valueOf(Estaticos.precipitacao.getValorPrecipitacao()));
+            }
+        }, delay, intervalos);
     }
 
     /**
@@ -162,81 +197,45 @@ public class frmPrincipal extends javax.swing.JDialog
 
     private void formWindowOpened(java.awt.event.WindowEvent evt)//GEN-FIRST:event_formWindowOpened
     {//GEN-HEADEREND:event_formWindowOpened
-        Controle controle = new Controle();
-        Timer timer = new Timer();
-        TimerTask task = new TimerTask()
-        {
-            @Override
-            public void run()
-            {
-                controle.cadastrarPrecipitacao();
-                controle.cadastrarTemperatura();
-                controle.cadastrarUmidade();
-
-                lblUmidadeTempoReal.setText(Protocolo.umidade + "%");
-                lblTemperaturaTempoReal.setText(Protocolo.temperatura + "ºC");
-                lblPrecipitacaoTempoReal.setText(Protocolo.precipitacao);
-
-                lblUmidadeBD.setText(String.valueOf(Estaticos.umidade.getValorUmidade() + "%"));
-                lblTemperaturaBD.setText(String.valueOf(Estaticos.temperatura.getValorTemperatura() + "ºC"));
-                lblPrecipitacaoBD.setText(String.valueOf(Estaticos.precipitacao.getValorPrecipitacao()));
-
-            }
-        };
-        timer.schedule(task, 0, 1000);
+        this.TempoReal();
+        this.TempoCadastroBD();
     }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try
-        {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
-                if ("Nimbus".equals(info.getName()))
-                {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        }
-        catch (ClassNotFoundException ex)
-        {
+        } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        catch (InstantiationException ex)
-        {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        catch (IllegalAccessException ex)
-        {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable()
-        {
-            public void run()
-            {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
                 frmPrincipal dialog = new frmPrincipal(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter()
-                {
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
-                    public void windowClosing(java.awt.event.WindowEvent e)
-                    {
+                    public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
                 });
