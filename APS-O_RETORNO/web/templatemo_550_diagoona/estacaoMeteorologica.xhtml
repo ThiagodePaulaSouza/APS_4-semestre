@@ -34,10 +34,10 @@
             <h1 class="tm-sitename text-uppercase text-white">Estação Meteorológica</h1>       
         </div>
         <!-- Graficos do Chart do Primefaces -->
-        <p:poll interval="10" update="umidade,temperatura,precipitacao"/>
+        <p:poll interval="60" update="umidade,temperatura,precipitacao"/>
         <p:chart id="umidade" class="umidade" type="metergauge" model="#{umidadeBean.model}" />
         <p:chart id="temperatura" class="temperatura" type="metergauge" model="#{temperaturaBean.model}" />
-        <p:chart id="precipitacao" class="precipitacao" type="metergauge" model="#{precipitacaoBean.model}" />|
+        <p:chart id="precipitacao" class="precipitacao" type="metergauge" model="#{precipitacaoBean.model}" />
         <div class="botao">
             <button type="button" class="btn btn-outline-light" id="botao" onclick="window.location.href = '../services.xhtml'">Retornar...</button>
         </div>
